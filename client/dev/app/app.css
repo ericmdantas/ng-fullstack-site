@@ -3,6 +3,11 @@ body {
   margin: 0;
 }
 
+main {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
 .project-name {
   color: #63686c;
 }

@@ -15,6 +15,7 @@ module.exports = {
     'n-footer': require('../footer/index.js'),
     'n-logo': require('../logo/index.js'),
     'n-badge': require('../badge/index.js'),
+    'n-stack': require('../stack/index.js'),
     'n-terminal': require('../terminal/index.js'),
     'n-structure': require('../structure/index.js')
   }
