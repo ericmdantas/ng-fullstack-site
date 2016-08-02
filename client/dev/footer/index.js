@@ -1,3 +1,5 @@
+import './footer.css';
+
 module.exports = {
   data() {
     return {

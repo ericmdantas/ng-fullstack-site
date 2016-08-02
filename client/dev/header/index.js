@@ -1,3 +1,5 @@
+import './header.css';
+
 module.exports = {
   data() {
     return {
