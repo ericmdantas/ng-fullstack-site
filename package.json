@@ -4,7 +4,7 @@
   "description": "ng-fullstack-site",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --port 1234",
+    "start": "webpack-dev-server --port 5555",
     "build": "webpack -p"
   },
   "repository": {

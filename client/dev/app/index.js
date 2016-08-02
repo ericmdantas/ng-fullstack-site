@@ -13,7 +13,7 @@ module.exports = {
   components: {
     'n-header': require('../header/index.js'),
     'n-footer': require('../footer/index.js'),
-    'n-logo': require('../common/logo.js'),
+    'n-logo': require('../logo/index.js'),
     'n-badge': require('../badge/index.js')
   }
 }

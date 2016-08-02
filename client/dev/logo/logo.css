@@ -1,0 +1,36 @@
+.logo-container {
+  text-align: center;
+}
+
+.logo {
+  color: #63686c;
+  font-weight: 100;
+  font-size: 60px;
+}
+
+.logo .logo-full {
+  color: #db5627;
+}
+
+.logo-explanation {
+  font-size: 15px;
+  color: #63686c;
+}
+
+@media(min-width: 600px) {
+    .logo {
+      font-size: 80px;
+    }
+}
+
+@media(min-width: 800px) {
+    .logo {
+      font-size: 100px;
+    }
+}
+
+@media(min-width: 1000px) {
+    .logo {
+      font-size: 150px;
+    }
+}
