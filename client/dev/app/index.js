@@ -11,8 +11,9 @@ module.exports = {
   },
   template: require('./app.html'),
   components: {
-    'ng-fullstack-header': require('../header/index.js'),
-    'ng-fullstack-footer': require('../footer/index.js'),
-    'ng-fullstack-logo': require('../common/logo.js')
+    'ngf-header': require('../header/index.js'),
+    'ngf-footer': require('../footer/index.js'),
+    'ng-fullstack-logo': require('../common/logo.js'),
+    'ngf-badge': require('../badge/index.js')
   }
 }
