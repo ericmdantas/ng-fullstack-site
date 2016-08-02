@@ -6,8 +6,8 @@ module.exports = {
 
     }
   },
-  template: require('./logo.html'),
   ready() {
     console.log('logo ready')
-  }
+  },
+  template: require('./logo.html')  
 }

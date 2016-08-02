@@ -6,8 +6,8 @@ module.exports = {
 
     }
   },
-  template: require('./footer.html'),
   ready() {
     console.log('footer ready')
-  }
+  },
+  template: require('./footer.html') 
 };

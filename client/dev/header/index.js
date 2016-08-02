@@ -6,8 +6,11 @@ module.exports = {
 
     }
   },
-  template: require('./header.html'),
   ready() {
     console.log('header ready')
+  },
+  template: require('./header.html'),
+  components: {
+    'n-menu': require('../menu/index.js')
   }
 };
