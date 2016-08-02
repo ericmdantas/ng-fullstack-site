@@ -2,3 +2,11 @@ body {
   font-family: "Roboto";
   margin: 0;
 }
+
+.project-name {
+  color: #63686c;
+}
+
+.project-name .important-part {
+  color: #cb5122;
+}

@@ -25,6 +25,7 @@
     ]
   },
   "dependencies": {
+    "font-awesome": "^4.6.3",
     "vue": "^1.0.26"
   },
   "devDependencies": {

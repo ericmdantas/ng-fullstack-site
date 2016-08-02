@@ -1,3 +1,7 @@
-footer h1 {
-  color: blue;
+footer {
+  color: #63686c;
+}
+
+footer a {
+  color: #007E68;
 }
