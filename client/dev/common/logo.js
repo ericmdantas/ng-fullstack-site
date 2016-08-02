@@ -6,11 +6,7 @@ module.exports = {
 
     }
   },
-  template: `
-    <div class="logo-container">
-      <img src="./common/logo.png" class="logo"/>
-    </div>
-  `,
+  template: require('./logo.html'),
   ready() {
     console.log('logo ready')
   }

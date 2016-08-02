@@ -3,5 +3,16 @@
 }
 
 .logo {
-  width: 100%;
+  color: #63686c;
+  font-size: 150px;
+  font-weight: 100;
+}
+
+.logo .logo-full {
+  color: #db5627;
+}
+
+.logo-explanation {
+  font-size: 15px;
+  color: #63686c;
 }
