@@ -5,6 +5,6 @@ console.log('yo!')
 new Vue({
   el: '#app',
   components: {
-    'ng-fullstack-app': require('./app/index.js')
+    'n-app': require('./app/index.js')
   }
 });
