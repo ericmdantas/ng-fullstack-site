@@ -1,11 +1,15 @@
-;(function() {
-    "use strict";
+module.exports = {
+  data() {
+    return {
 
-    Vue.component('ng-fullstack-footer', {
-        template: `
-            <footer>
-                <p>footer</p>
-            </footer>
-        `
-    });
-}());
+    }
+  },
+  template: `
+    <footer>
+      <h1>head</h1>
+    </footer>
+  `,
+  ready() {
+    console.log('footer ready')
+  }
+};

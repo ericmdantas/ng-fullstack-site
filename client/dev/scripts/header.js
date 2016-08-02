@@ -1,11 +1,15 @@
-;(function() {
-    "use strict";
+module.exports = {
+  data() {
+    return {
 
-    Vue.component('ng-fullstack-header', {        
-        template: `
-            <header>
-                <p>header</p>
-            </header>
-        `
-    });
-}());
+    }
+  },
+  template: `
+    <header>
+      <h1>head</h1>
+    </header>
+  `,
+  ready() {
+    console.log('header ready')
+  }
+};

@@ -4,7 +4,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>ng-fullstack</title>
 	</head>
-	
+
 	<body id="app">
 		<ng-fullstack-header></ng-fullstack-header>
 
@@ -14,14 +14,6 @@
 
 		<ng-fullstack-footer></ng-fullstack-footer>
 
-		<!-- build:js client/dist/scripts/vendors.js -->
-		<script src="../../node_modules/vue/dist/vue.min.js"></script>
-		<!-- endbuild -->
-
-		<!-- build:js client/dist/scripts/main.js -->
-		<script src="./scripts/header.js"></script>
-		<script src="./scripts/footer.js"></script>
-		<script src="./scripts/index.js"></script>
-		<!-- endbuild -->
+		<script src="./bundle.js"></script>
 	</body>
 </html>
