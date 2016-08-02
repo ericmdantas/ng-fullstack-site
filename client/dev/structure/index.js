@@ -1,4 +1,3 @@
-import 'font-awesome.css';
 import './structure.css';
 
 module.exports = {

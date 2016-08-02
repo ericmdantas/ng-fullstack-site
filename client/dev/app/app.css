@@ -11,6 +11,19 @@ body {
   color: #cb5122;
 }
 
+a[href] {
+  padding: 1px 2px;
+  color: #db5627;
+  text-decoration: none;
+  transition: color .3s, background-color .3s;
+  border-radius: 4px;
+}
+
+a:hover {
+  color: #fff;
+  background-color: #F2751F;
+}
+
 .visible-mobile {
   display: block;
 }

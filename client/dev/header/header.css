@@ -9,17 +9,26 @@ header {
 }
 
 header .project-name-container {
-  text-align: center;
   padding-top: 10px;
+  float: left;
+  text-align: left;
 }
 
 header .project-name {
   font-size: 20px;
 }
 
+header .project-options-container {
+  padding-top: 10px;
+  text-align: right;
+  float: right;
+}
+
 @media(min-width: 600px) {
-  header .project-name-container {
-    text-align: left;
-    float: left;
+  header .project-options-container {
+    text-transform: uppercase;
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
   }
 }

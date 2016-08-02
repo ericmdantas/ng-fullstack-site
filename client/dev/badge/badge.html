@@ -1,5 +1,7 @@
 <div class="badges-container">
   <span v-for="badge in badges">
-    <img :src="badge.src" />
+    <a :href="badge.url" target="_blank" class="badge-url">
+      <img :src="badge.src" />
+    </a>
   </span>
 </div>

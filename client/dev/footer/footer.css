@@ -1,7 +1,5 @@
 footer {
+  border-top: 1px solid #ccc;
+  text-align: center;
   color: #63686c;
-}
-
-footer a {
-  color: #007E68;
 }
