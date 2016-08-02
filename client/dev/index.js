@@ -5,7 +5,7 @@ console.log('yo!')
 new Vue({
   el: '#app',
   components: {
-    'ng-fullstack-header': require('./scripts/header.js'),
-    'ng-fullstack-footer': require('./scripts/footer.js')
+    'ng-fullstack-header': require('./header/index.js'),
+    'ng-fullstack-footer': require('./footer/index.js')
   }
 });

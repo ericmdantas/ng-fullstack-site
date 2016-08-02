@@ -4,11 +4,7 @@ module.exports = {
 
     }
   },
-  template: `
-    <header>
-      <h1>head</h1>
-    </header>
-  `,
+  template: require('./header.html'),
   ready() {
     console.log('header ready')
   }

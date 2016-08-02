@@ -4,11 +4,7 @@ module.exports = {
 
     }
   },
-  template: `
-    <footer>
-      <h1>head</h1>
-    </footer>
-  `,
+  template: require('./footer.html'),
   ready() {
     console.log('footer ready')
   }
