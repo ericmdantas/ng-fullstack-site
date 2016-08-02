@@ -29,6 +29,10 @@ module.exports = (env) => {
         {
           test: /\.html$/,
           loader: 'html'
+        },
+        {
+          test: /\.png$/,
+          lodader: 'file'
         }
       ]
     }

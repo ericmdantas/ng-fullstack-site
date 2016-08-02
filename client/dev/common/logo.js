@@ -1,12 +1,16 @@
-import Vue from 'vue';
+import './logo.css';
 
 module.exports = {
   data() {
     return {
-      
+
     }
   },
-  template: require('./logo.html'),
+  template: `
+    <div class="logo-container">
+      <img src="./common/logo.png" class="logo"/>
+    </div>
+  `,
   ready() {
     console.log('logo ready')
   }
