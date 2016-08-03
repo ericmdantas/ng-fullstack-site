@@ -7,3 +7,7 @@
 a.badge-url {
   text-decoration: none;
 }
+
+a.badge-url:hover {
+  background-color: transparent;
+}
