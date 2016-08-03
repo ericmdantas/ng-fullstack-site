@@ -24,7 +24,7 @@ module.exports = {
             answered: false
           },
           {
-            question: 'What stack do you want?',
+            question: 'Which stack do you want?',
             answer: '',
             answered: false
           },
@@ -34,37 +34,37 @@ module.exports = {
             answered: false
           },
           {
-            question: 'Do you want to keep test in a separated directory?',
+            question: 'Do you want to keep tests in a different folder?',
             answer: '',
             answered: false
           },
           {
-            question: 'What do you want in server side?',
+            question: 'What language do you want in the server side?',
             answer: '',
             answered: false
           },
           {
-            question: 'What do you want in client side?',
+            question: 'Which framework do you want to use in the client side?',
             answer: '',
             answered: false
           },
           {
-            question: 'What framework do you want to use in server side?',
+            question: 'Which framework do you want to use in server side?',
             answer: '',
             answered: false
           },
           {
-            question: 'What transpiler do you want to use in server side?',
+            question: 'Which transpiler do you want to use in server side?',
             answer: '',
             answered: false
           },
           {
-            question: 'Do you want a secure app (HTTP/2)?',
+            question: 'Is it going to be a secure app (HTTPS || HTTP/2)?',
             answer: '',
             answered: false
           },
           {
-            question: 'Do you want to use a different static server? Such as nginx, apache, IIS?',
+            question: 'Do you want to use a different static server? Such as NGINX, Apache, IIS, etc?',
             answer: '',
             answered: false
           }
