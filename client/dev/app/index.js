@@ -1,14 +1,6 @@
 import './app.css';
 
 module.exports = {
-  data() {
-    return {
-
-    }
-  },
-  ready() {
-    console.log('app ready')
-  },
   template: require('./app.html'),
   components: {
     'n-header': require('../header/index.js'),

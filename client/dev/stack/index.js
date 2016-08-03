@@ -79,8 +79,5 @@ module.exports = {
       ]
     }
   },
-  ready() {
-    console.log('stack ready');
-  },
   template: require('./stack.html')
 }

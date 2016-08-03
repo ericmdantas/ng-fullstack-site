@@ -6,8 +6,5 @@ module.exports = {
 
     }
   },
-  ready() {
-    console.log('menu ready')
-  },
   template: require('./menu.html')
 }

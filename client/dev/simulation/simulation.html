@@ -3,6 +3,9 @@
       <p class="simulation-calling">Simulation</p>
   </div>
 
-  <n-terminal></n-terminal>
-  <n-structure></n-structure>
+  <n-terminal :bus="bus"
+              :events="events"></n-terminal>
+
+  <n-structure :bus="bus"
+               :events="events"></n-structure>
 </div>

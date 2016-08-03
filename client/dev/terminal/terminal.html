@@ -2,7 +2,15 @@
   <div class="terminal-container">
     <div class="terminal-user-interactions" v-for="interaction in interactions" track-by="$index">
       <span class="terminal-question">{{interaction.question}}</span>
-      <span class="user-answer">{{interaction.answer}}</span>
+
+      <input type="text"
+             @keyup.enter="answer(interaction)"
+             v-if="!interaction.answered"
+             maxlength="3"
+             class="user-answer-input" />
+
+      <span class="user-answer"
+            v-if="interaction.answered">{{interaction.answer}}</span>
     </div>
   </div>
 </div>

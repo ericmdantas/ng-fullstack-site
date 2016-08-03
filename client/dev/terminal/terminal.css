@@ -1,5 +1,6 @@
 .terminal-container {
   background-color: #21252b;
+  min-height: 400px;
   padding: 5px;
   box-shadow: 0 -1px 0 #e5e5e5,
               0 0 2px rgba(0,0,0,.12),
@@ -15,6 +16,7 @@
 .terminal-question {
   margin: 5px 0;
   color: #abb2bf;
+  font-size: 1em;
 }
 
 .terminal-question:before {
@@ -27,4 +29,20 @@
 .user-answer {
   margin: 5px 0 0 15px;
   color: #d19a66;
+  font-size: 1em;
+}
+
+.user-answer-input {
+  margin: 0 0 0 15px;
+  color: #d19a66;
+  max-width: 70px;
+  background-color: transparent;
+  border: 0;
+  font-size: 1em;
+  border-bottom: 1px solid #fff;
+}
+
+.user-answer-input:focus {
+  outline: 0;
+  border-bottom-color: transparent;
 }

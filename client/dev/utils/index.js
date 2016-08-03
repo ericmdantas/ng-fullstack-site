@@ -1,1 +1,1 @@
-export {bus} from './message_bus';
+export bus from './message_bus';

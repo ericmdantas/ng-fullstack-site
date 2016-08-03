@@ -5,6 +5,10 @@ module.exports = {
     return {
       badges: [
         {
+          src: "https://badge.fury.io/js/generator-ng-fullstack.svg",
+          url: "https://github.com/ericmdantas/generator-ng-fullstack/"
+        },
+        {
           src: "https://travis-ci.org/ericmdantas/generator-ng-fullstack.svg?branch=master",
           url: "https://travis-ci.org/ericmdantas/generator-ng-fullstack"
         },
@@ -14,9 +18,6 @@ module.exports = {
         }
       ]
     }
-  },
-  ready() {
-    console.log('badge ready')
   },
   template: require('./badge.html')
 }
