@@ -4,9 +4,10 @@
       <span class="terminal-question">{{interaction.question}}</span>
 
       <input type="text"
+             v-model="interaction.answer"
              @keyup.enter="answer(interaction)"
              v-if="!interaction.answered"
-             maxlength="3"
+             maxlength="7"
              class="user-answer-input" />
 
       <span class="user-answer"
