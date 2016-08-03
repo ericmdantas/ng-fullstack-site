@@ -12,6 +12,7 @@ header .project-name-container {
   padding-top: 10px;
   float: left;
   text-align: left;
+  cursor: pointer;
 }
 
 header .project-name {

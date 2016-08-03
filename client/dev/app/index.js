@@ -12,11 +12,9 @@ module.exports = {
   template: require('./app.html'),
   components: {
     'n-header': require('../header/index.js'),
-    'n-footer': require('../footer/index.js'),
-    'n-logo': require('../logo/index.js'),
-    'n-badge': require('../badge/index.js'),
+    'n-face': require('../face/index.js'),
     'n-stack': require('../stack/index.js'),
-    'n-terminal': require('../terminal/index.js'),
-    'n-structure': require('../structure/index.js')
+    'n-simulation': require('../simulation/index.js'),
+    'n-footer': require('../footer/index.js')
   }
 }
