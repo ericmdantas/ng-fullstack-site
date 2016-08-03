@@ -1,3 +1,8 @@
 <div id="terminal">
-  <h1>terminal</h1>
+  <div class="terminal-container">
+    <div class="terminal-user-interactions" v-for="interaction in interactions" track-by="$index">
+      <span class="terminal-question">{{interaction.question}}</span>
+      <span class="user-answer">{{interaction.answer}}</span>
+    </div>
+  </div>
 </div>

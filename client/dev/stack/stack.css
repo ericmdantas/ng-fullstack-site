@@ -16,6 +16,9 @@
 .stack-items-container {
   display: flex;
   flex-wrap: wrap;
+  box-shadow: 0 -1px 0 #e5e5e5,
+              0 0 2px rgba(0,0,0,.12),
+              0 2px 4px rgba(0,0,0,.24)
 }
 
 .stack-item {
@@ -23,12 +26,11 @@
   width: 100%;
   box-sizing: border-box;
   background-color: #fff;
-  border: 1px solid #ded7d7;
-  border-bottom: none;
+  border-top: 1px solid #ddd;
 }
 
-.stack-item:last-of-type {
-  border-bottom: 1px solid #ded7d7;
+.stack-item:first-of-type {
+  border-top: none;
 }
 
 .stack-item-name {
