@@ -5,6 +5,23 @@ module.exports = {
     return {
       groups: [
         {
+          type: 'Protocols',
+          items: [
+            {
+              name: 'HTTP',
+              description: 'Something about HTTP'
+            },
+            {
+              name: 'HTTPS',
+              description: 'Something about HTTPS'
+            },
+            {
+              name: 'HTTP/2',
+              description: 'Something about HTTP/2'
+            }
+          ]
+        },
+        {
           type: 'Tools',
           items: [
             {
