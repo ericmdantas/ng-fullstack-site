@@ -1,14 +1,24 @@
 <div id="terminal">
   <div class="terminal-container">
-    <div class="terminal-user-interactions" v-for="interaction in interactions" track-by="$index">
+    <button type="button"
+            @click="restart()"
+            class="restart-terminal-button">RESTART</button>
+
+    <div class="terminal-user-interactions" v-for="interaction in question.interactions" track-by="$index">
       <span class="terminal-question">{{interaction.question}}</span>
 
       <input type="text"
              v-model="interaction.answer"
-             @keyup.enter="answer(interaction)"
-             v-if="!interaction.answered"
-             maxlength="7"
+             @keyup.enter="answer(interaction, interaction.answer)"
+             v-if="!interaction.answered && !interaction.multiple"
+             maxlength="20"
              class="user-answer-input" />
+
+      <button type="button"
+              class="user-answer-button"
+              v-if="!!interaction.multiple && !interaction.answered"
+              v-for="possibleAnswer in interaction.answers"
+              @click="answer(interaction, possibleAnswer);">{{possibleAnswer}}</button>
 
       <span class="user-answer"
             v-if="interaction.answered">{{interaction.answer}}</span>
