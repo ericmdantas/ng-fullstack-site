@@ -1,3 +1,14 @@
-#simulation {
-  
+.simulation-container {
+    padding-top: 50px;
+}
+
+.simulation-calling {
+  font-size: 40px;
+  color: #db5627;
+}
+
+@media(min-width: 600px) {
+  .simulation-calling {
+    margin-left: -35px;
+  }
 }

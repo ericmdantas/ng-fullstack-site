@@ -1,11 +1,46 @@
 .stack-container {
+    padding-top: 50px;
+}
 
+.stack-calling {
+  font-size: 40px;
+  color: #db5627;
+}
+
+.stack-group-description {
+  font-size: 20px;
+  color: #63686c;
+  margin: 30px 0;
+}
+
+.stack-items-container {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .stack-item {
+  padding: 15px;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #fff;
+  border: 1px solid #ded7d7;
+  border-bottom: none;
+}
+
+.stack-item:last-of-type {
+  border-bottom: 1px solid #ded7d7;
+}
+
+.stack-item-name {
 
 }
 
-.stack-item .stack-info {
-  
+.stack-item-description {
+  color: #888;
+}
+
+@media(min-width: 600px) {
+  .stack-calling {
+    margin-left: -35px;
+  }
 }
