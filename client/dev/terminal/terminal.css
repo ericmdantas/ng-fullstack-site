@@ -30,13 +30,17 @@
 .user-answer,
 .user-answer-input,
 .user-answer-button {
-  margin: 10px 0 0 0;
   display: block;
   border: 0;
-  padding: 0;
+  padding: 10px 0;
   font-size: 1em;
   background-color: transparent;
   color: #d19a66;
+}
+
+.user-answer {
+  padding-top: 10px;
+  padding-bottom: 5px;
 }
 
 .user-answer-input {
