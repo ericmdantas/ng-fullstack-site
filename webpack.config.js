@@ -14,7 +14,7 @@ module.exports = (env) => {
     },
     resolve: {
       root: resolve(__dirname, '.')
-    },
+    },  
     module: {
       loaders: [
         {

@@ -8,23 +8,36 @@
               0 2px 4px rgba(0,0,0,.24);
 }
 
-.terminal-user-interactions {
+.terminal-user-interactions,
+.terminal-feedbacks {
   margin: 0 0 0 20px;
   position: relative;
   padding: 10px;
 }
 
-.terminal-question {
+.terminal-info {
+  padding-top: 20px;
+}
+
+.terminal-question,
+.terminal-info {
   margin: 5px 0;
   color: #abb2bf;
   font-size: 1em;
 }
 
-.terminal-question:before {
+.terminal-question:before,
+.terminal-info:before {
   position: absolute;
   content: ">";
   color: #98c379;
   left: -10px;
+}
+
+
+.terminal-info:before {
+  content: "~";
+  color: #98c379;
 }
 
 .user-answer,

@@ -8,7 +8,12 @@ module.exports = {
   },
   data() {
     return {
-      terminal: new InteractionContainer()
+      terminal: new InteractionContainer(),
+      creatingStructure: false,
+      installingDeps: false,
+      depsInstalled: false,
+      feedbackFinished: false,
+      finished: false
     }
   },
   methods: {
@@ -20,12 +25,66 @@ module.exports = {
       this.bus.pub(this.events.QUESTION_ANSWERED, info);
 
       if (info.lastOne) {
-        this.bus.pub(this.events.QUESTIONS_FINISHED);
+        this.finish()
       }
     },
     restart() {
+      this.finished = false;
+      this.creatingStructure = false;
+      this.depsInstalled = false;
+      this.feedbackFinished = false;
+
       this.terminal = new InteractionContainer();
       this.bus.pub(this.events.QUESTIONS_RESTARTED);
+    },
+    finish() {
+      this.finished = true;
+
+      this._creatingStructure()
+        .then(() => {
+          return this._installingDeps();
+        })
+        .then(() => {
+          return this._depsInstalled();
+        })
+        .then(() => {
+          return this._feedbackFinished()
+        })
+        .then(() => {
+          this.bus.pub(this.events.QUESTIONS_FINISHED);
+        });
+    },
+    _creatingStructure() {
+      return new Promise((res) => {
+        setTimeout(() => {
+          this.creatingStructure = true;
+          return res(null);
+        }, 100);
+      });
+    },
+    _installingDeps() {
+      return new Promise((res) => {
+        setTimeout(() => {
+          this.installingDeps = true;
+          return res(null);
+        }, 1000);
+      });
+    },
+    _depsInstalled() {
+      return new Promise((res) => {
+        setTimeout(() => {
+          this.depsInstalled = true;
+          return res(null);
+        }, 1000);
+      });
+    },
+    _feedbackFinished() {
+      return new Promise((res) => {
+        setTimeout(() => {
+          this.feedbackFinished = true;
+          return res(null);
+        }, 500);
+      });
     }
   },
   template: require('./terminal.html')
