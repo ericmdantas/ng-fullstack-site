@@ -1,5 +1,7 @@
-module.exports = class QuestionContainer {
+module.exports = class InteractionContainer {
   constructor() {
+    this.answers = {};
+
     this.interactions = {
       'appName': {
         question: 'What is the name of your app?',

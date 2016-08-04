@@ -1,5 +1,5 @@
 import './terminal.css';
-import QuestionContainer from './question_container.js';
+import InteractionContainer from './interaction_container.js';
 
 module.exports = {
   props: {
@@ -8,21 +8,21 @@ module.exports = {
   },
   data() {
     return {
-      question: new QuestionContainer()
+      terminal: new InteractionContainer()
     }
   },
   methods: {
     answer(info, answer) {
       info.answered = true;
       info.answer = answer;
-      this.question.showNext();
+      this.terminal.showNext();
       this.bus.pub(this.events.QUESTION_ANSWERED, info);
     },
     finish() {
       this.bus.pub(this.events.QUESTIONS_FINISHED);
     },
     restart() {
-      this.question = new QuestionContainer();
+      this.terminal = new InteractionContainer();
       this.bus.pub(this.events.QUESTIONS_RESTARTED);
     }
   },
