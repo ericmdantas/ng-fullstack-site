@@ -1,5 +1,5 @@
 .stack-container {
-    padding-top: 50px;
+
 }
 
 .stack-calling {
@@ -41,7 +41,7 @@
   color: #888;
 }
 
-@media(min-width: 600px) {
+@media(min-width: 1000px) {
   .stack-calling {
     margin-left: -35px;
   }

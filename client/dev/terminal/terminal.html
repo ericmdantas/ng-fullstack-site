@@ -16,7 +16,8 @@
                    @keyup.enter="answer(interaction, interaction.answer)"
                    v-if="!interaction.answered && !interaction.multiple"
                    maxlength="20"
-                   class="user-answer-input" />
+                   class="user-answer-input"
+                   autofocus />
 
             <button type="button"
                     class="user-answer-button"

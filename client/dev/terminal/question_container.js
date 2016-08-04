@@ -1,7 +1,7 @@
 module.exports = class QuestionContainer {
   constructor() {
-    this.interactions = [
-      {
+    this.interactions = {
+      'appName': {
         question: 'What is the name of your app?',
         answer: 'my-app',
         answered: false,
@@ -10,7 +10,8 @@ module.exports = class QuestionContainer {
         visible: true,
         marked: true
       },
-      {
+
+      'stack': {
         question: 'Which stack do you want?',
         answer: '',
         answers: ['Client', 'Server', 'Fullstack'],
@@ -19,15 +20,16 @@ module.exports = class QuestionContainer {
         multiple: true,
         visible: false
       },
-      {
+      'repo': {
         question: 'Which Git repository hosting service are you using?',
         answer: '',
         answers: ['Github', 'Bitbucket', 'Gitlab'],
         answered: false,
         key: 'repo',
-        multiple: true
+        multiple: true,
+        visible: false
       },
-      {
+      'testsSeparated': {
         question: 'Do you want to keep tests in a different folder?',
         answer: '',
         answers: ['Yes', 'No'],
@@ -36,7 +38,7 @@ module.exports = class QuestionContainer {
         multiple: true,
         visible: false
       },
-      {
+      'serverLanguage': {
         question: 'What language do you want in the server side?',
         answer: '',
         answers: ['Golang', 'Node'],
@@ -45,7 +47,7 @@ module.exports = class QuestionContainer {
         multiple: true,
         visible: false
       },
-      {
+      'clientFramework': {
         question: 'Which framework do you want to use in the client side?',
         answer: '',
         answers: ['Angular 1', 'Angular 2', 'Aurelia', 'Vue'],
@@ -54,7 +56,7 @@ module.exports = class QuestionContainer {
         multiple: true,
         visible: false
       },
-      {
+      'nodeFramework': {
         question: 'Which framework do you want to use in server side?',
         answer: '',
         answers: ['Express', 'Koa'],
@@ -63,7 +65,7 @@ module.exports = class QuestionContainer {
         multiple: true,
         visible: false
       },
-      {
+      'goFramework': {
         question: 'Which framework do you want to use in server side?',
         answer: '',
         answers: ['Gin', 'Echo'],
@@ -72,7 +74,7 @@ module.exports = class QuestionContainer {
         multiple: true,
         visible: false
       },
-      {
+      'transpilerServer': {
         question: 'Which transpiler do you want to use in server side?',
         answer: '',
         answers: ['Babel', 'Typescript'],
@@ -81,7 +83,7 @@ module.exports = class QuestionContainer {
         multiple: true,
         visible: false
       },
-      {
+      'secure': {
         question: 'Is it going to be a secure app (HTTPS || HTTP/2)?',
         answer: '',
         answers: ['Yes', 'No'],
@@ -90,7 +92,7 @@ module.exports = class QuestionContainer {
         multiple: true,
         visible: false
       },
-      {
+      'separatedStatic': {
         question: 'Do you want to use a different static server? Such as NGINX, Apache, IIS, etc?',
         answer: '',
         answers: ['Yes', 'No'],
@@ -98,78 +100,134 @@ module.exports = class QuestionContainer {
         key: 'separatedStatic',
         multiple: true,
         visible: false
+      },
+      'finished': {
+        finshed: false
       }
-    ]
+    }
   }
 
   showNext() {
-    for (let i = 0; i < this.interactions.length; i++) {
-      switch(this.interactions[i].key) {
-        case "appName":
-          this.interactions[1].visible = true;
+    Object.keys(this.interactions).forEach((k) => {
+      let _currentInt = this.interactions[k];
 
-          return;
+      switch(k) {
+        case "appName":
+          if (_currentInt.answered && !_currentInt.alreadyAnswered) {
+            _currentInt.alreadyAnswered = true;
+            this.interactions["stack"].visible = true;
+          }
+
+          break;
 
         case "stack":
-          this.interactions[2].visible = true;
+          if (_currentInt.answered && !_currentInt.alreadyAnswered) {
+            _currentInt.alreadyAnswered = true;
+            this.interactions["repo"].visible = true;
+          }
 
-          return;
+          break;
 
         case "repo":
-          this.interactions[3].visible = true;
+          if (_currentInt.answered && !_currentInt.alreadyAnswered) {
+            _currentInt.alreadyAnswered = true;
+            this.interactions["testsSeparated"].visible = true;
+          }
 
-          return;
+          break;
 
         case "testsSeparated":
-          this.interactions[4].visible = true;
+          if (_currentInt.answered && !_currentInt.alreadyAnswered) {
+            _currentInt.alreadyAnswered = true;
 
-          return;
+            if (this.interactions["stack"].answer !== "Client") {
+              this.interactions["serverLanguage"].visible = true;
+            } else {
+              this.interactions["clientFramework"].visible = true;
+            }
+          }
+
+          break;
 
         case "serverLanguage":
-          if (this.interactions[1].answer != "Client") {
-            this.interactions[5].visible = true;
+          if (_currentInt.answered && !_currentInt.alreadyAnswered) {
+            _currentInt.alreadyAnswered = true;
+
+            if (this.interactions["stack"].answer !== "Server") {
+              this.interactions["clientFramework"].visible = true;
+            } else {
+              if (_currentInt.answer === "Node") {
+                this.interactions["nodeFramework"].visible = true;
+              } else {
+                this.interactions["goFramework"].visible = true;
+              }
+            }
           }
 
-          return;
+          break;
 
         case "clientFramework":
-          if (this.interactions[1].answer != "Server") {
-            this.interactions[6].visible = true;
+          if ((_currentInt.answered && !_currentInt.alreadyAnswered) && (this.interactions["stack"].answer !== "Server")) {
+            _currentInt.alreadyAnswered = true;
+
+            if (this.interactions["serverLanguage"] === "Node") {
+                this.interactions["nodeFramework"].visible = true;
+            } else {
+              if (this.interactions["serverLanguage"] === "Golang") {
+                this.interactions["goFramework"].visible = true;
+              } else {
+                this.interactions["secure"].visible = true;
+              }
+            }
           }
 
-          return;
+          break;
 
         case "nodeFramework":
-          if (this.interactions[4].answer === "Node") {
-            this.interactions[8].visible = true;
+          if (_currentInt.answered && !_currentInt.alreadyAnswered && this.interactions["stack"] !== "Client") {
+            _currentInt.alreadyAnswered = true;
+
+            this.interactions["transpilerServer"].visible = true;
           }
 
-          return;
+          break;
 
         case "goFramework":
-          if (this.interactions[4].answer === "Golang") {
-            this.interactions[7].visible = true;
+          if (_currentInt.answered && !_currentInt.alreadyAnswered && this.interactions["stack"] !== "Client") {
+            _currentInt.alreadyAnswered = true;
+
+            this.interactions["secure"].visible = true;
           }
 
-          return;
+          break;
 
         case "transpilerServer":
-          if (this.interactions[4].answer === "Node") {
-            this.interactions[9].visible = true;
+          if (_currentInt.answered && !_currentInt.alreadyAnswered) {
+            _currentInt.alreadyAnswered = true;
+
+            this.interactions["secure"].visible = true;
           }
 
-          return;
+          break;
 
         case "secure":
-          this.interactions[10].visible = true;
+          if (_currentInt.answered && !_currentInt.alreadyAnswered) {
+            _currentInt.alreadyAnswered = true;
 
-          return;
+            this.interactions["separatedStatic"].visible = true;
+          }
+
+          break;
 
         case "separatedStatic":
-          this.interactions[11].visible = true;
+          if (_currentInt.answered && !_currentInt.alreadyAnswered) {
+            _currentInt.alreadyAnswered = true;
 
-          return;
+            this.interactions["finished"].finish = true;
+          }
+
+          break;
       }
-    }
+    });
   }
 }
