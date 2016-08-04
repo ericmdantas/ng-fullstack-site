@@ -7,8 +7,7 @@ module.exports = class InteractionContainer {
         answered: false,
         key: 'appName',
         multiple: false,
-        visible: true,
-        marked: true
+        visible: true
       },
 
       'stack': {
@@ -99,7 +98,8 @@ module.exports = class InteractionContainer {
         answered: false,
         key: 'separatedStatic',
         multiple: true,
-        visible: false
+        visible: false,
+        lastOne: true
       }
     }
   }
@@ -167,10 +167,10 @@ module.exports = class InteractionContainer {
           if ((_currentInt.answered && !_currentInt.alreadyAnswered) && (this.interactions["stack"].answer !== "Server")) {
             _currentInt.alreadyAnswered = true;
 
-            if (this.interactions["serverLanguage"] === "Node") {
+            if (this.interactions["serverLanguage"].answer === "Node") {
                 this.interactions["nodeFramework"].visible = true;
             } else {
-              if (this.interactions["serverLanguage"] === "Golang") {
+              if (this.interactions["serverLanguage"].answer === "Golang") {
                 this.interactions["goFramework"].visible = true;
               } else {
                 this.interactions["secure"].visible = true;
@@ -219,7 +219,6 @@ module.exports = class InteractionContainer {
         case "separatedStatic":
           if (_currentInt.answered && !_currentInt.alreadyAnswered) {
             _currentInt.alreadyAnswered = true;
-            _currentInt.finished = true;
           }
 
           break;

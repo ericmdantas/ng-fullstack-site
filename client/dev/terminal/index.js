@@ -16,10 +16,12 @@ module.exports = {
       info.answered = true;
       info.answer = answer;
       this.terminal.showNext();
+
       this.bus.pub(this.events.QUESTION_ANSWERED, info);
-    },
-    finish() {
-      this.bus.pub(this.events.QUESTIONS_FINISHED);
+
+      if (info.lastOne) {
+        this.bus.pub(this.events.QUESTIONS_FINISHED);
+      }
     },
     restart() {
       this.terminal = new InteractionContainer();

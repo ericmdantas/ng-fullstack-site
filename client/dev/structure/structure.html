@@ -1,5 +1,14 @@
 <div id="structure">
   <div class="structure-container">
-    <p>Answer the questions above to see the structure generated</p>
+    <div class="structure-not-finished-container">
+      <p class="structure-not-finished-info"
+         v-if="!finished">Answer the questions above to see the structure generated</p>
+    </div>
+
+    <div class="structure-finished-container">
+      <p class="structure-finished-info"
+         v-if="finished">Done</p>
+
+    </div>
   </div>
 </div>
