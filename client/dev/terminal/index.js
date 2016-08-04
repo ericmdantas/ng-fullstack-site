@@ -31,6 +31,7 @@ module.exports = {
     restart() {
       this.finished = false;
       this.creatingStructure = false;
+      this.installingDeps = false;
       this.depsInstalled = false;
       this.feedbackFinished = false;
 
