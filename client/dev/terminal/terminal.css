@@ -68,7 +68,11 @@
 
 .user-answer-button {
   cursor: pointer;
-  transition: color .3s;
+  transition: color .3s, padding-left .5s;
+}
+
+.user-answer-button:hover {
+  padding-left: 5px;
 }
 
 .user-answer-button:active {
