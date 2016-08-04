@@ -100,9 +100,6 @@ module.exports = class QuestionContainer {
         key: 'separatedStatic',
         multiple: true,
         visible: false
-      },
-      'finished': {
-        finshed: false
       }
     }
   }
@@ -222,8 +219,7 @@ module.exports = class QuestionContainer {
         case "separatedStatic":
           if (_currentInt.answered && !_currentInt.alreadyAnswered) {
             _currentInt.alreadyAnswered = true;
-
-            this.interactions["finished"].finish = true;
+            _currentInt.finished = true;
           }
 
           break;
