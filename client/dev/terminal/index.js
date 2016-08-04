@@ -10,6 +10,7 @@ module.exports = {
     return {
       terminal: new InteractionContainer(),
       creatingStructure: false,
+      structureCreated: false,
       installingDeps: false,
       depsInstalled: false,
       feedbackFinished: false,
@@ -31,6 +32,7 @@ module.exports = {
     restart() {
       this.finished = false;
       this.creatingStructure = false;
+      this.structureCreated = false;
       this.installingDeps = false;
       this.depsInstalled = false;
       this.feedbackFinished = false;
@@ -43,13 +45,16 @@ module.exports = {
 
       this._creatingStructure()
         .then(() => {
+          return this._structureCreated();
+        })
+        .then(() => {
           return this._installingDeps();
         })
         .then(() => {
           return this._depsInstalled();
         })
         .then(() => {
-          return this._feedbackFinished()
+          return this._feedbackFinished();
         })
         .then(() => {
           this.bus.pub(this.events.QUESTIONS_FINISHED);
@@ -59,6 +64,14 @@ module.exports = {
       return new Promise((res) => {
         setTimeout(() => {
           this.creatingStructure = true;
+          return res(null);
+        }, 1000);
+      });
+    },
+    _structureCreated() {
+      return new Promise((res) => {
+        setTimeout(() => {
+          this.structureCreated = true;
           return res(null);
         }, 1000);
       });

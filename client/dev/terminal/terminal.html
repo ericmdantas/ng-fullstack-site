@@ -37,14 +37,17 @@
       <p class="terminal-info"
          v-if="creatingStructure">Creating structure...</p>
 
+     <p class="terminal-info"
+         v-if="structureCreated">Structure created.</p>
+
       <p class="terminal-info"
          v-if="installingDeps">Installing dependencies...</p>
 
       <p class="terminal-info"
-         v-if="depsInstalled">Dependencies installed :D</p>
+         v-if="depsInstalled">Dependencies installed.</p>
 
       <p class="terminal-info"
-         v-if="feedbackFinished">Happy coding!</p>
+         v-if="feedbackFinished">Happy coding :D</p>
     </div>
   </div>
 </div>
