@@ -1,4 +1,6 @@
 import './structure.css';
+import File from './file.js';
+import Folder from './folder.js';
 
 module.exports = {
   props: {
