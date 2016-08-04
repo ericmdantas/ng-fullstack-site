@@ -7,10 +7,10 @@ module.exports = {
         height: '0px'
       }
     }
-  }, 
+  },
   ready() {
     this.css = {
-      height: `${document.body.offsetHeight}px`
+      height: `${document.body.offsetHeight - 50}px`
     }
   },
   template: require('./face.html'),
