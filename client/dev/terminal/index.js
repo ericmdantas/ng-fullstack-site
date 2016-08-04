@@ -59,7 +59,7 @@ module.exports = {
         setTimeout(() => {
           this.creatingStructure = true;
           return res(null);
-        }, 100);
+        }, 1000);
       });
     },
     _installingDeps() {
@@ -67,7 +67,7 @@ module.exports = {
         setTimeout(() => {
           this.installingDeps = true;
           return res(null);
-        }, 1000);
+        }, 2000);
       });
     },
     _depsInstalled() {
@@ -75,7 +75,7 @@ module.exports = {
         setTimeout(() => {
           this.depsInstalled = true;
           return res(null);
-        }, 1000);
+        }, 2000);
       });
     },
     _feedbackFinished() {
@@ -83,7 +83,7 @@ module.exports = {
         setTimeout(() => {
           this.feedbackFinished = true;
           return res(null);
-        }, 500);
+        }, 1000);
       });
     }
   },
