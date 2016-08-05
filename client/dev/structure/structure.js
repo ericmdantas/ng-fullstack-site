@@ -2,38 +2,58 @@ import File from './file.js';
 import Folder from './folder.js';
 
 export default class Structure {
-  constructor(structure) {
+  constructor(answers) {
+    this._answers = answers;
     this._structure = {};
 
     this._createDefaultFiles();
 
-    if (structure.get("serverLanguage").answer === "Node") {
+    if (this._get("serverLanguage").answer === "Node") {
       this._createNodeServer(structure.get("transpilerServer").answer);
+      this._createServerTasks();
+      this._createNodeTest();
     }
 
-    if (structure.get("serverLanguage").answer === "Golang") {
+    if (this._get("serverLanguage").answer === "Golang") {
       this._createGolangServer();
+      this._createGolangTest();
     }
 
-    if (structure.get("clientFramework").answer === "Angular 1") {
+    if (this._get("clientFramework").answer === "Angular 1") {
       this._createAngular1Client();
+      this._createAngular1Test();
+      this._createClientTasks();
     }
 
-    if (structure.get("clientFramework").answer === "Angular 2") {
+    if (this._get("clientFramework").answer === "Angular 2") {
       this._createAngular2Client();
+      this._createAngular2Test();
+      this._createClientTasks();
     }
 
-    if (structure.get("clientFramework").answer === "Aurelia") {
+    if (this._get("clientFramework").answer === "Aurelia") {
       this._createAureliaClient();
+      this._createAureliaTest();
+      this._createClientTasks();
     }
 
-    if (structure.get("clientFramework").answer === "Vue") {
+    if (this._get("clientFramework").answer === "Vue") {
       this._createVueClient();
+      this._createVueTest();
+      this._createClientTasks();
     }
 
-    if (structure.get("secure").answer === "Yes") {
+    if (this._get("secure").answer === "Yes") {
       this._createCerts();
     }
+  }
+
+  _get(token) {
+    if (!this._answers.has(token)) {
+      return {};
+    }
+
+    return this._answers.get(token);
   }
 
   _createNodeServer() {
@@ -74,5 +94,29 @@ export default class Structure {
 
   _createDefaultFiles() {
     console.log('default files')
+  }
+
+  _createAngular1Test() {
+    console.log('angular1 test')
+  }
+
+  _createAngular2Test() {
+    console.log('angular2 test')
+  }
+
+  _createAureliaTest() {
+    console.log('aurelia test')
+  }
+
+  _createVueTest() {
+    console.log('aurelia test')
+  }
+
+  _createGolangServer() {
+    console.log('golang test')
+  }
+
+  _createNodeServer() {
+    console.log('node test')
   }
 }
