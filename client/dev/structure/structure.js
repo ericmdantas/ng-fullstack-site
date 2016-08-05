@@ -1,5 +1,6 @@
 import File from './file.js';
 import Folder from './folder.js';
+import Path from './path.js';
 
 export default class Structure {
   constructor(answers) {
@@ -58,6 +59,20 @@ export default class Structure {
 
   _createNodeServer() {
     console.log('node server')
+
+    this._structure.server = {
+      entry: new Path('./index.js'),
+      main: new Path('./server/server.js'),
+      routes: new Path('./server/routes/index.js'),
+      constants: new Path('./server/constants/db.json'),
+      dbConfig: new Path('./server/config/db.conf.js'),
+      routeConfig: new Path('./server/config/routes.conf.js'),
+      commons: new Path('./server/commons/static/index.js'),
+      todoRoutes: new Path('./server/api/todo/route/todo-route.js'),
+      todoModel: new Path('./server/api/todo/model/todo-model.js'),
+      todoController: new Path('./server/api/todo/controller/todo-controller.js'),
+      todoDAO: new Path('./server/api/todo/dao/todo-dao.js')
+    }
   }
 
   _createGolangServer() {
