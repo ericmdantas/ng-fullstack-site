@@ -27,15 +27,6 @@ module.exports = class InteractionContainer {
         multiple: true,
         visible: false
       },
-      'testsSeparated': {
-        question: 'Do you want to keep tests in a different folder?',
-        answer: '',
-        answers: ['Yes', 'No'],
-        answered: false,
-        key: 'testsSeparated',
-        multiple: true,
-        visible: false
-      },
       'serverLanguage': {
         question: 'What language do you want in the server side?',
         answer: '',
@@ -125,14 +116,6 @@ module.exports = class InteractionContainer {
           break;
 
         case "repo":
-          if (_currentInt.answered && !_currentInt.alreadyAnswered) {
-            _currentInt.alreadyAnswered = true;
-            this.interactions["testsSeparated"].visible = true;
-          }
-
-          break;
-
-        case "testsSeparated":
           if (_currentInt.answered && !_currentInt.alreadyAnswered) {
             _currentInt.alreadyAnswered = true;
 
