@@ -9,7 +9,6 @@ module.exports = class InteractionContainer {
         multiple: false,
         visible: true
       },
-
       'stack': {
         question: 'Which stack do you want?',
         answer: '',

@@ -1,6 +1,5 @@
 import './structure.css';
-import File from './file.js';
-import Folder from './folder.js';
+import Structure from './structure.js';
 
 module.exports = {
   props: {
@@ -32,6 +31,8 @@ module.exports = {
   methods: {
     create() {
       console.log('creating structure...');
+
+      this.structure = new Structure(this.answers);
     }
   },
   template: require('./structure.html')

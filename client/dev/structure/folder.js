@@ -1,4 +1,4 @@
-module.exports = class Folder {
+export default class Folder {
   constructor(name) {
     this.name = name;
   }
