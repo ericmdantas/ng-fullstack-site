@@ -81,7 +81,7 @@ module.exports = {
         setTimeout(() => {
           this.installingDeps = true;
           return res(null);
-        }, 2000);
+        }, 500);
       });
     },
     _depsInstalled() {
@@ -97,7 +97,7 @@ module.exports = {
         setTimeout(() => {
           this.feedbackFinished = true;
           return res(null);
-        }, 1000);
+        }, 500);
       });
     }
   },

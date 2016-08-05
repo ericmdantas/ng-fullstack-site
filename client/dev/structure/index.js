@@ -30,11 +30,7 @@ module.exports = {
   },
   methods: {
     create() {
-      console.log('creating structure...');
-
       this.structure = new Structure(this.answers);
-
-      console.log(this.structure.client)
     }
   },
   template: require('./structure.html')
