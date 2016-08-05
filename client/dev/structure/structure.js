@@ -199,6 +199,7 @@ export default class Structure {
       procfile: './procfile.txt',
       packageJson: './package.json',
       karmaConf: './karma.conf.js',
+      e2e: './test/e2e/todo.e2e_test.js',
       newRelic: './newrelic.js',
       gulp: './gulpfile.babel.js',
       yoRc: './yo-rc.json',
@@ -272,5 +273,29 @@ export default class Structure {
       modelTest: './tests/server/todo/model/todo-model_test.js',
       routeTest: './tests/server/todo/controller/todo-route_test.js'
     }
+  }
+
+  get client() {
+    return this._structure.client;
+  }
+
+  get server() {
+    return this._structure.server;
+  }
+
+  get clientTest() {
+    return this._structure.clientTest;
+  }
+
+  get clientTask() {
+    return this._structure.clientTask;
+  }
+
+  get serverTest() {
+    return this._structure.serverTest;
+  }
+
+  get serverTask() {
+    return this._structure.serverTask;
   }
 }

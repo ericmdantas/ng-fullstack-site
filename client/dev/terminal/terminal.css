@@ -26,18 +26,18 @@
   font-size: 1em;
 }
 
-.terminal-question:before,
-.terminal-info:before {
+.terminal-question:not(.answered):before {
   position: absolute;
   content: ">";
   color: #98c379;
   left: -10px;
 }
 
-
 .terminal-info:before {
+  position: absolute;
   content: "~";
   color: #98c379;
+  left: -10px;
 }
 
 .user-answer,

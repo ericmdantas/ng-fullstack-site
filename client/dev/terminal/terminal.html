@@ -9,7 +9,8 @@
          track-by="$index"
          v-if="interaction.visible">
 
-            <span class="terminal-question">{{interaction.question}}</span>
+            <span class="terminal-question"
+                  :class="{answered: interaction.answered}">{{interaction.question}}</span>
 
             <input type="text"
                    v-model="interaction.answer"
