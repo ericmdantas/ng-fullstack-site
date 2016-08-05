@@ -7,8 +7,9 @@
   color: #db5627;
 }
 
-@media(min-width: 600px) {
+@media(min-width: 1000px) {
   .simulation-calling {
+    font-size: 70px;
     margin-left: -35px;
   }
 }

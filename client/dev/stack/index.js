@@ -5,6 +5,53 @@ module.exports = {
     return {
       groups: [
         {
+          type: 'Server',
+          items: [
+            {
+              name: 'Golang',
+              description: 'Something about Golang'
+            },
+            {
+              name: 'Node',
+              description: 'Something about Node'
+            },
+          ]
+        },
+        {
+          type: 'Transpilers',
+          items: [
+            {
+              name: 'Babel',
+              description: 'Something about Babel'
+            },
+            {
+              name: 'Typescript',
+              description: 'Something about Babel'
+            },
+          ]
+        },
+        {
+          type: 'Client',
+          items: [
+            {
+              name: 'Angular 1',
+              description: 'Something about Angular 1'
+            },
+            {
+              name: 'Angular 2',
+              description: 'Something about Angular 2'
+            },
+            {
+              name: 'Aurelia',
+              description: 'Something about Aurelia'
+            },
+            {
+              name: 'Vue',
+              description: 'Something about Vue'
+            },
+          ]
+        },
+        {
           type: 'Protocols',
           items: [
             {
@@ -18,6 +65,27 @@ module.exports = {
             {
               name: 'HTTP/2',
               description: 'Something about HTTP/2'
+            }
+          ]
+        },
+        {
+          type: 'Platforms',
+          items: [
+            {
+              name: 'Heroku',
+              description: 'Something about Heroku'
+            },
+            {
+              name: 'New Relic',
+              description: 'Something about New Relic'
+            },
+            {
+              name: 'MongoHQ',
+              description: 'Something about MongoHQ'
+            },
+            {
+              name: 'MongoLAB',
+              description: 'Something about MongoLAB'
             }
           ]
         },
@@ -44,53 +112,6 @@ module.exports = {
               name: 'Mocha',
               description: 'Something about Mocha'
             }
-          ]
-        },
-        {
-          type: 'Transpilers',
-          items: [
-            {
-              name: 'Babel',
-              description: 'Something about Babel'
-            },
-            {
-              name: 'Typescript',
-              description: 'Something about Babel'
-            },
-          ]
-        },
-        {
-          type: 'Server',
-          items: [
-            {
-              name: 'Golang',
-              description: 'Something about Golang'
-            },
-            {
-              name: 'Node',
-              description: 'Something about Node'
-            },
-          ]
-        },
-        {
-          type: 'Client',
-          items: [
-            {
-              name: 'Angular 1',
-              description: 'Something about Angular 1'
-            },
-            {
-              name: 'Angular 2',
-              description: 'Something about Angular 2'
-            },
-            {
-              name: 'Aurelia',
-              description: 'Something about Aurelia'
-            },
-            {
-              name: 'Vue',
-              description: 'Something about Vue'
-            },
           ]
         }
       ]
