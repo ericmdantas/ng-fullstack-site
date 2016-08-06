@@ -67,8 +67,7 @@ export default class Structure {
       todoRoutes: 'server/api/todo/route/todo-route.js',
       todoModel: 'server/api/todo/model/todo-model.js',
       todoController: 'server/api/todo/controller/todo-controller.js',
-      todoDAO: 'server/api/todo/dao/todo-dao.js',
-      entry: 'index.js',
+      todoDAO: 'server/api/todo/dao/todo-dao.js'
     }
   }
 
@@ -173,7 +172,7 @@ export default class Structure {
 
   _createDefaultFiles() {
     this._structure.default = {
-      e2e: 'test/e2e/todo.e2e_test.js',
+      e2e: 'tests/e2e/todo.e2e_test.js',
       readme: 'README.md',
       protractorConf: 'protractor.conf.js',
       procfile: 'procfile.txt',
