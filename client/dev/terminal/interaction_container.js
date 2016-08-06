@@ -66,7 +66,7 @@ module.exports = class InteractionContainer {
       'transpilerServer': {
         question: 'Which transpiler do you want to use in server side?',
         answer: '',
-        answers: ['Babel', 'Typescript'],
+        answers: ['Babel', 'Node', 'Typescript'],
         answered: false,
         key: 'transpilerServer',
         multiple: true,

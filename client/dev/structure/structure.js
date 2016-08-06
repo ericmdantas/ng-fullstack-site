@@ -6,7 +6,7 @@ export default class Structure {
     this._createDefaultFiles();
 
     if (this._get("serverLanguage").answer === "Node") {
-      this._createNodeServer(this._get("transpilerServer").answer);
+      this._createNodeServer();
       this._createServerTasks();
       this._createNodeTest();
     }
@@ -65,6 +65,12 @@ export default class Structure {
       todoModel: 'server/api/todo/model/todo-model.js',
       todoController: 'server/api/todo/controller/todo-controller.js',
       todoDAO: 'server/api/todo/dao/todo-dao.js'
+    }
+
+    if (this._get("transpilerServer").answer === "Typescript") {
+      for (let prop in this._structure.server) {
+        this._structure.server[prop] = this._structure.server[prop].replace(/\.js$/, '.ts');
+      }
     }
   }
 
@@ -181,6 +187,11 @@ export default class Structure {
       travis: '.travis.yml',
       gitignore: '.gitignore',
       babelrc: '.babelrc'
+    }
+
+    if (this._get("transpilerServer").answer === "Typescript") {
+      this._structure.default.tsConfigJson = "tsconfig.json";
+      this._structure.default.typingsJson = "typings.json";
     }
   }
 
