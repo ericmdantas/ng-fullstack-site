@@ -9,7 +9,7 @@ export default class Structure {
     this._createDefaultFiles();
 
     if (this._get("serverLanguage").answer === "Node") {
-      this._createNodeServer(structure.get("transpilerServer").answer);
+      this._createNodeServer(this._get("transpilerServer").answer);
       this._createServerTasks();
       this._createNodeTest();
     }
@@ -57,10 +57,7 @@ export default class Structure {
   }
 
   _createNodeServer() {
-    console.log('node server')
-
     this._structure.server = {
-      entry: 'index.js',
       main: 'server/server.js',
       routes: 'server/routes/index.js',
       constants: 'server/constants/db.json',
@@ -70,90 +67,78 @@ export default class Structure {
       todoRoutes: 'server/api/todo/route/todo-route.js',
       todoModel: 'server/api/todo/model/todo-model.js',
       todoController: 'server/api/todo/controller/todo-controller.js',
-      todoDAO: 'server/api/todo/dao/todo-dao.js'
+      todoDAO: 'server/api/todo/dao/todo-dao.js',
+      entry: 'index.js',
     }
   }
 
   _createGolangServer() {
-    console.log('go server')
-
     this._structure.server = {
-      main: 'server/main.go',
       routes: 'server/routes/routes.go',
       dbConfig: 'server/config/dbconfig.go',
       commonStatic: 'server/common/static/static.go',
       todoController: 'server/api/todo/controller/todocontroller.go',
       todoModel: 'server/api/todo/model/todomodel.go',
       todoDao: 'server/api/todo/dao/tododao.go',
-      todoRoute: 'server/api/todo/route/todoroute.go'
+      todoRoute: 'server/api/todo/route/todoroute.go',
+      main: 'server/main.go',
     }
   }
 
   _createAngular1Client() {
-    console.log('ng1 client')
-
     this._structure.client = {
-      indexHtml: 'client/dev/index.html',
-      main: 'client/dev/app.js',
-      config: 'client/dev/app.config.js',
-      route: 'client/dev/app.route.js',
       todoController: 'client/dev/controllers/todo-controller.js',
       todoModel: 'client/dev/model/todo-model.js',
       todoResource: 'client/dev/resource/todo-resource.js',
       todoService: 'client/dev/service/todo-dao.js',
       todoStyle: 'client/dev/styles/todo.css',
-      todoTemplates: 'client/dev/templates/todo.html'
+      todoTemplates: 'client/dev/templates/todo.html',
+      indexHtml: 'client/dev/index.html',
+      main: 'client/dev/app.js',
+      config: 'client/dev/app.config.js',
+      route: 'client/dev/app.route.js'
     }
   }
 
   _createAngular2Client() {
-    console.log('ng2 client')
-
     this._structure.client = {
-      indexHtml: 'client/dev/index.html',
-      main: 'client/dev/index.ts',
-      systemConfig: 'client/dev/config.js',
-      route: 'client/dev/app.ts',
       todoComponent: 'client/dev/components/todo-cmp.ts',
       todoRoute: 'client/dev/components/todo-route.ts',
       todoService: 'client/dev/services/todo-service.ts',
       todoStyle: 'client/dev/styles/todo.css',
-      todoTemplate: 'client/dev/templates/todo.html'
+      todoTemplate: 'client/dev/templates/todo.html',
+      indexHtml: 'client/dev/index.html',
+      main: 'client/dev/index.ts',
+      systemConfig: 'client/dev/config.js',
+      route: 'client/dev/app.ts'
     }
   }
 
   _createAureliaClient() {
-    console.log('aurelia client')
-
     this._structure.client = {
-      indexHtml: 'client/dev/index.html',
-      main: 'client/dev/app.js',
-      mainTemplate: 'client/dev/app.html',
       todoComponent: 'client/dev/todo/components/todo.js',
       todoTemplate: 'client/dev/todo/components/todo.html',
       todoModel: 'client/dev/todo/models/todo.js',
       todoService: 'client/dev/todo/services/todo-service.js',
-      todoStyle: 'client/dev/todo/styles/todo.css'
+      todoStyle: 'client/dev/todo/styles/todo.css',
+      indexHtml: 'client/dev/index.html',
+      main: 'client/dev/app.js',
+      mainTemplate: 'client/dev/app.html'
     }
   }
 
   _createVueClient() {
-    console.log('vue client')
-
     this._structure.client = {
-      indexHtml: 'client/dev/index.html',
-      main: 'client/dev/index.js',
       todoComponent: 'client/dev/todo/components/todo-cmp.js',
       todoService: 'client/dev/todo/services/todo-service.js',
-      todoStyle: 'client/dev/todo/styles/todo.css'
+      todoStyle: 'client/dev/todo/styles/todo.css',
+      indexHtml: 'client/dev/index.html',
+      main: 'client/dev/index.js'
     }
   }
 
   _createClientTasks() {
-    console.log('client tasks')
-
-    this._structure.clientTasks = {
-      entry: 'tasks/index.js',
+    this._structure.clientTask = {
       build: 'tasks/client/build.js',
       buildCss: 'tasks/client/build_css.js',
       buildHtml: 'tasks/client/build_html.js',
@@ -163,23 +148,19 @@ export default class Structure {
       copy: 'tasks/client/copy.js',
       del: 'tasks/client/del.js',
       test: 'tasks/client/test.js',
-      watch: 'tasks/client/watch.js'
+      watch: 'tasks/client/watch.js',
+      entry: 'tasks/index.js',
     }
   }
 
   _createServerTasks() {
-    console.log('server tasks')
-
-    this._structure.serverTasks = {
-      entry: 'tasks/index.js',
+    this._structure.serverTask = {
       build: 'tasks/server/build.js',
       test: 'tasks/server/test.js'
     }
   }
 
   _createCerts() {
-    console.log('secure')
-
     this._structure.certs = {
       caCrt: 'server/cert/ca.crt',
       caCsr: 'server/cert/ca.csr',
@@ -191,27 +172,23 @@ export default class Structure {
   }
 
   _createDefaultFiles() {
-    console.log('default files')
-
     this._structure.default = {
+      e2e: 'test/e2e/todo.e2e_test.js',
       readme: 'README.md',
       protractorConf: 'protractor.conf.js',
       procfile: 'procfile.txt',
       packageJson: 'package.json',
       karmaConf: 'karma.conf.js',
-      e2e: 'test/e2e/todo.e2e_test.js',
       newRelic: 'newrelic.js',
       gulp: 'gulpfile.babel.js',
-      yoRc: 'yo-rc.json',
+      yoRc: '.yo-rc.json',
       travis: '.travis.yml',
-      gitignore: 'gitignore',
-      babelrc: 'babelrc'
+      gitignore: '.gitignore',
+      babelrc: '.babelrc'
     }
   }
 
   _createAngular1Test() {
-    console.log('angular1 test')
-
     this._structure.clientTest = {
       controllerTest: 'tests/client/todo/controller/todo-controller_test.js',
       modelTest: 'tests/client/todo/model/todo-model_test.js',
@@ -220,8 +197,6 @@ export default class Structure {
   }
 
   _createAngular2Test() {
-    console.log('angular2 test')
-
     this._structure.clientTest = {
       componentTest: 'tests/client/todo/components/todo-cmp_test.ts',
       serviceTest: 'tests/client/todo/services/todo-service_test.ts'
@@ -229,8 +204,6 @@ export default class Structure {
   }
 
   _createAureliaTest() {
-    console.log('aurelia test')
-
     this._structure.clientTest = {
       componentTest: 'tests/client/todo/components/todo-cmp_test.js',
       modelTest: 'tests/client/todo/services/todo-model_test.js',
@@ -239,8 +212,6 @@ export default class Structure {
   }
 
   _createVueTest() {
-    console.log('vue test')
-
     this._structure.clientTest = {
       componentTest: 'tests/client/todo/components/todo-cmp_test.js',
       modelTest: 'tests/client/todo/services/todo-model_test.js',
@@ -249,8 +220,6 @@ export default class Structure {
   }
 
   _createGolangTest() {
-    console.log('golang test')
-
     this._structure.serverTest = {
       routes: 'server/routes/routes_test.go',
       dbConfig: 'server/config/dbconfig_test.go',
@@ -263,8 +232,6 @@ export default class Structure {
   }
 
   _createNodeTest() {
-    console.log('node test')
-
     this._structure.serverTest = {
       helperDbJson: 'tests/server/_helpers/db.json',
       helperDbDao: 'tests/server/_helpers/db.js',
@@ -275,27 +242,41 @@ export default class Structure {
     }
   }
 
+  _splitPath(obj) {
+    let _spl = [];
+
+    for (let prop in obj) {
+      _spl.push(obj[prop].split('/'));
+    }
+
+    return _spl;
+  }
+
+  get root() {
+    return this._splitPath(this._structure.default);
+  }
+
   get client() {
-    return this._structure.client;
+    return this._splitPath(this._structure.client);
   }
 
   get server() {
-    return this._structure.server;
+    return this._splitPath(this._structure.server);
   }
 
   get clientTest() {
-    return this._structure.clientTest;
+    return this._splitPath(this._structure.clientTest);
   }
 
   get clientTask() {
-    return this._structure.clientTask;
+    return this._splitPath(this._structure.clientTask);
   }
 
   get serverTest() {
-    return this._structure.serverTest;
+    return this._splitPath(this._structure.serverTest);
   }
 
   get serverTask() {
-    return this._structure.serverTask;
+    return this._splitPath(this._structure.serverTask);
   }
 }

@@ -1,14 +1,26 @@
 <div id="structure">
   <div class="structure-container">
-    <div class="structure-not-finished-container">
-      <p class="structure-not-finished-info"
-         v-if="!finished">Answer the questions above to see the structure generated</p>
-    </div>
+    <div class="structure-not-finished-container"
+         v-if="!finished">
 
-    <div class="structure-finished-container">
-      <p class="structure-finished-info"
-         v-if="finished">Done</p>
+          <p class="structure-not-finished-info">Answer the questions above to check the structure generated :D</p>
 
     </div>
+
+    <div class="structure-finished-container"
+         v-if="finished">
+
+         <n-client :path="structure.client"></n-client>
+         <n-server :path="structure.server"></n-server>
+
+         <n-client-test :path="structure.clientTest"></n-client-test>
+         <n-client-task :path="structure.clientTask"></n-client-task>
+
+         <n-server-test :path="structure.serverTest"></n-server-test>
+         <n-server-task :path="structure.serverTask"></n-server-task>
+
+         <n-root :path="structure.root"></n-root>
+    </div>
+
   </div>
 </div>

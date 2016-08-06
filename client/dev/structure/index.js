@@ -33,5 +33,14 @@ module.exports = {
       this.structure = new Structure(this.answers);
     }
   },
+  components: {
+      'n-root': require('./root.js'),
+      'n-client': require('./client.js'),
+      'n-client-test': require('./client_test.js'),
+      'n-client-task': require('./client_task.js'),
+      'n-server': require('./server.js'),
+      'n-server-test': require('./server_test.js'),
+      'n-server-task': require('./server_task.js')
+  },
   template: require('./structure.html')
 }
