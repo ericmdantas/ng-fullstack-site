@@ -1,6 +1,3 @@
-import File from './file.js';
-import Folder from './folder.js';
-
 export default class Structure {
   constructor(answers) {
     this._answers = answers;
