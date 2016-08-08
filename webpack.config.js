@@ -1,3 +1,5 @@
+const webpack = require('webpack');
+
 const {
   join,
   resolve
@@ -15,6 +17,12 @@ module.exports = (env) => {
     resolve: {
       root: resolve(__dirname, '.')
     },
+    plugins: [
+      new webpack.optimize.UglifyJsPlugin({
+        sourceMap: true,
+        mangle: true
+      })
+    ],
     module: {
       loaders: [
         {
