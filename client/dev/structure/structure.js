@@ -13,7 +13,6 @@ export default class Structure {
 
     if (this._get("serverLanguage").answer === "Golang") {
       this._createGolangServer();
-      this._createGolangTest();
     }
 
     if (this._get("clientFramework").answer === "Angular 1") {
@@ -63,7 +62,7 @@ export default class Structure {
       todoRoutes: 'server/api/todo/route/todo-route.js',
       todoModel: 'server/api/todo/model/todo-model.js',
       todoController: 'server/api/todo/controller/todo-controller.js',
-      todoDAO: 'server/api/todo/dao/todo-dao.js',      
+      todoDAO: 'server/api/todo/dao/todo-dao.js',
       main: 'server/server.js',
     }
 
@@ -76,7 +75,6 @@ export default class Structure {
 
   _createGolangServer() {
     this._structure.server = {
-      main: 'server/main.go',
       routes: 'server/routes/routes.go',
       dbConfig: 'server/config/dbconfig.go',
       commonStatic: 'server/common/static/static.go',
@@ -84,6 +82,15 @@ export default class Structure {
       todoModel: 'server/api/todo/model/todomodel.go',
       todoDao: 'server/api/todo/dao/tododao.go',
       todoRoute: 'server/api/todo/route/todoroute.go',
+      main: 'server/main.go',
+
+      routesTest: 'server/routes/routes_test.go',
+      dbConfigTest: 'server/config/dbconfig_test.go',
+      commonStaticTest: 'server/common/static/static_test.go',
+      todoControllerTest: 'server/api/todo/controller/todocontroller_test.go',
+      todoModelTest: 'server/api/todo/model/todomodel_test.go',
+      todoDaoTest: 'server/api/todo/dao/tododao_test.go',
+      todoRouteTest: 'server/api/todo/route/todoroute_test.go',
     }
   }
 
@@ -223,18 +230,6 @@ export default class Structure {
       componentTest: 'tests/client/todo/components/todo-cmp_test.js',
       modelTest: 'tests/client/todo/services/todo-model_test.js',
       serviceTest: 'tests/client/todo/services/todo-service_test.js'
-    }
-  }
-
-  _createGolangTest() {
-    this._structure.serverTest = {
-      routes: 'server/routes/routes_test.go',
-      dbConfig: 'server/config/dbconfig_test.go',
-      commonStatic: 'server/common/static/static_test.go',
-      todoController: 'server/api/todo/controller/todocontroller_test.go',
-      todoModel: 'server/api/todo/model/todomodel_test.go',
-      todoDao: 'server/api/todo/dao/tododao_test.go',
-      todoRoute: 'server/api/todo/route/todoroute_test.go'
     }
   }
 

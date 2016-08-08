@@ -26,6 +26,7 @@
   },
   "dependencies": {
     "font-awesome": "^4.6.3",
+    "lodash": "^4.14.1",
     "vue": "^1.0.26"
   },
   "devDependencies": {

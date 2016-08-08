@@ -17,20 +17,12 @@ module.exports = {
         {{s}}
       </div>
 
-      <div v-for="cTest in tree.clientTest">
-        {{cTest}}
+      <div v-for="ta in tree.task">
+        {{ta}}
       </div>
 
-      <div v-for="sTest in tree.serverTest">
-        {{sTest}}
-      </div>
-
-      <div v-for="cTask in tree.clientTask">
-        {{cTask}}
-      </div>
-
-      <div v-for="sTask in tree.serverTask">
-        {{sTask}}
+      <div v-for="te in tree.test">
+        {{te}}
       </div>
 
       <div v-for="r in tree.root">
@@ -43,14 +35,31 @@ module.exports = {
   },
   methods: {
       _organize() {
+        let _test = [];
+        let _task = [];
+
+        for (let i = 0; i < this.structure.clientTest.length; i++) {
+          _test.push(this.structure.clientTest[i])
+        }
+
+        for (let i = 0; i < this.structure.serverTest.length; i++) {
+          _test.push(this.structure.serverTest[i])
+        }
+
+        for (let i = 0; i < this.structure.clientTask.length; i++) {
+          _test.push(this.structure.clientTask[i])
+        }
+
+        for (let i = 0; i < this.structure.serverTask.length; i++) {
+          _test.push(this.structure.serverTask[i])
+        }
+
         return {
           root: this.structure.root,
           client: this.structure.client,
-          clientTest: this.structure.clientTest,
-          clientTask: this.structure.clientTask,
           server: this.structure.server,
-          serverTest: this.structure.serverTest,
-          serverTask: this.structure.serverTask
+          test: _test,
+          task: _task
         }
       }
   }
