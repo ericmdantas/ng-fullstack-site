@@ -76,6 +76,7 @@ export default class Structure {
 
   _createGolangServer() {
     this._structure.server = {
+      main: 'server/main.go',
       routes: 'server/routes/routes.go',
       dbConfig: 'server/config/dbconfig.go',
       commonStatic: 'server/common/static/static.go',
@@ -83,59 +84,58 @@ export default class Structure {
       todoModel: 'server/api/todo/model/todomodel.go',
       todoDao: 'server/api/todo/dao/tododao.go',
       todoRoute: 'server/api/todo/route/todoroute.go',
-      main: 'server/main.go',
     }
   }
 
   _createAngular1Client() {
     this._structure.client = {
+      indexHtml: 'client/dev/index.html',
+      main: 'client/dev/app.js',
+      config: 'client/dev/app.config.js',
+      route: 'client/dev/app.route.js',
       todoController: 'client/dev/controllers/todo-controller.js',
       todoModel: 'client/dev/model/todo-model.js',
       todoResource: 'client/dev/resource/todo-resource.js',
       todoService: 'client/dev/service/todo-dao.js',
       todoStyle: 'client/dev/styles/todo.css',
-      todoTemplates: 'client/dev/templates/todo.html',
-      indexHtml: 'client/dev/index.html',
-      main: 'client/dev/app.js',
-      config: 'client/dev/app.config.js',
-      route: 'client/dev/app.route.js'
+      todoTemplates: 'client/dev/templates/todo.html'
     }
   }
 
   _createAngular2Client() {
     this._structure.client = {
+      indexHtml: 'client/dev/index.html',
+      main: 'client/dev/index.ts',
+      systemConfig: 'client/dev/config.js',
+      route: 'client/dev/app.ts',
       todoComponent: 'client/dev/components/todo-cmp.ts',
       todoRoute: 'client/dev/components/todo-route.ts',
       todoService: 'client/dev/services/todo-service.ts',
       todoStyle: 'client/dev/styles/todo.css',
-      todoTemplate: 'client/dev/templates/todo.html',
-      indexHtml: 'client/dev/index.html',
-      main: 'client/dev/index.ts',
-      systemConfig: 'client/dev/config.js',
-      route: 'client/dev/app.ts'
+      todoTemplate: 'client/dev/templates/todo.html'
     }
   }
 
   _createAureliaClient() {
     this._structure.client = {
+      indexHtml: 'client/dev/index.html',
+      main: 'client/dev/app.js',
+      mainTemplate: 'client/dev/app.html'
       todoComponent: 'client/dev/todo/components/todo.js',
       todoTemplate: 'client/dev/todo/components/todo.html',
       todoModel: 'client/dev/todo/models/todo.js',
       todoService: 'client/dev/todo/services/todo-service.js',
-      todoStyle: 'client/dev/todo/styles/todo.css',
-      indexHtml: 'client/dev/index.html',
-      main: 'client/dev/app.js',
-      mainTemplate: 'client/dev/app.html'
+      todoStyle: 'client/dev/todo/styles/todo.css'
     }
   }
 
   _createVueClient() {
     this._structure.client = {
+      indexHtml: 'client/dev/index.html',
+      main: 'client/dev/index.js',
       todoComponent: 'client/dev/todo/components/todo-cmp.js',
       todoService: 'client/dev/todo/services/todo-service.js',
-      todoStyle: 'client/dev/todo/styles/todo.css',
-      indexHtml: 'client/dev/index.html',
-      main: 'client/dev/index.js'
+      todoStyle: 'client/dev/todo/styles/todo.css'
     }
   }
 
