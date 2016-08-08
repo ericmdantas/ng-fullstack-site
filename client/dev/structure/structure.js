@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 export default class Structure {
   constructor(answers) {
     this._answers = answers;
@@ -170,7 +172,7 @@ export default class Structure {
   }
 
   _createCerts() {
-    this._structure.certs = {
+    let _certs = {
       caCrt: 'server/cert/ca.crt',
       caCsr: 'server/cert/ca.csr',
       caKey: 'server/cert/ca.key',
@@ -178,6 +180,8 @@ export default class Structure {
       serverCsr: 'server/cert/server.csr',
       serverKey: 'server/cert/server.key'
     }
+
+    _.assign(this._structure.server, _certs);
   }
 
   _createDefaultFiles() {
@@ -256,10 +260,6 @@ export default class Structure {
 
   get root() {
     return this._splitPath(this._structure.default);
-  }
-
-  get cert() {
-    return this._splitPath(this._structure.certs);
   }
 
   get client() {

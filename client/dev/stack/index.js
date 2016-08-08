@@ -9,11 +9,13 @@ module.exports = {
           items: [
             {
               name: 'Golang',
-              description: 'Something about Golang'
+              description: 'Something about Golang',
+              ready: true,
             },
             {
               name: 'Node',
-              description: 'Something about Node'
+              description: 'Something about Node',
+              ready: true,
             },
           ]
         },
@@ -22,7 +24,8 @@ module.exports = {
           items: [
             {
               name: 'Babel',
-              description: 'Something about Babel'
+              description: 'Something about Babel',
+              ready: true,
             },
             {
               name: 'Typescript',
@@ -77,7 +80,7 @@ module.exports = {
           ]
         },
         {
-          type: 'DBs',
+          type: 'Databases',
           items: [
             {
               name: 'MongoDB',

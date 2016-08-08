@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 module.exports = {
   props: {
     structure: null
@@ -5,7 +7,7 @@ module.exports = {
   data() {
     return {
       tree: {}
-    }
+    };
   },
   template: `
     <div class="tree-container">
@@ -13,20 +15,16 @@ module.exports = {
         {{c}}
       </div>
 
-      <div v-for="c in tree.cert">
-        {{c}}
-      </div>
-
       <div v-for="s in tree.server">
         {{s}}
       </div>
 
-      <div v-for="ta in tree.task">
-        {{ta}}
-      </div>
-
       <div v-for="te in tree.test">
         {{te}}
+      </div>
+
+      <div v-for="ta in tree.task">
+        {{ta}}
       </div>
 
       <div v-for="r in tree.root">
@@ -35,24 +33,20 @@ module.exports = {
     </div>
   `,
   ready() {
-    this.tree = this._organize()
+    this.tree = this._organize();
   },
   methods: {
       _organize() {
         return {
           root: this._organizeRoot(),
-          cert: this._organizeCert(),
           client: this._organizeClient(),
           server: this._organizeServer(),
           test: this._organizeTest(),
-          task: this._organizeTask()
+          task: this._organizeTask(),
         }
       },
       _organizeRoot() {
         return this.structure.root;
-      },
-      _organizeCert() {
-        return this.structure.cert;
       },
       _organizeClient() {
         return this.structure.client;
@@ -64,11 +58,11 @@ module.exports = {
         let _test = [];
 
         for (let i = 0; i < this.structure.clientTest.length; i++) {
-          _test.push(this.structure.clientTest[i])
+          _test.push(this.structure.clientTest[i]);
         }
 
         for (let i = 0; i < this.structure.serverTest.length; i++) {
-          _test.push(this.structure.serverTest[i])
+          _test.push(this.structure.serverTest[i]);
         }
 
         return _test;
@@ -77,11 +71,11 @@ module.exports = {
         let _task = [];
 
         for (let i = 0; i < this.structure.clientTask.length; i++) {
-          _task.push(this.structure.clientTask[i])
+          _task.push(this.structure.clientTask[i]);
         }
 
         for (let i = 0; i < this.structure.serverTask.length; i++) {
-          _task.push(this.structure.serverTask[i])
+          _task.push(this.structure.serverTask[i]);
         }
 
         return _task;
