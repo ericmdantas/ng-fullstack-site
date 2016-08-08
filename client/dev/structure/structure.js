@@ -120,7 +120,7 @@ export default class Structure {
     this._structure.client = {
       indexHtml: 'client/dev/index.html',
       main: 'client/dev/app.js',
-      mainTemplate: 'client/dev/app.html'
+      mainTemplate: 'client/dev/app.html',
       todoComponent: 'client/dev/todo/components/todo.js',
       todoTemplate: 'client/dev/todo/components/todo.html',
       todoModel: 'client/dev/todo/models/todo.js',
