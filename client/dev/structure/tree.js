@@ -12,13 +12,18 @@ module.exports = {
   },
   template: require('./tree.html'),
   ready() {
-    this.tree = this._organize();
+    this.tree = this._parse();
   },
   methods: {
       stylify(info, index) {
         return {
           'padding-left': index * 20 + 'px'
         };
+      },
+      _parse() {
+        let _treeOrganized = this._organize();
+
+        return _treeOrganized;
       },
       _organize() {
         return {
