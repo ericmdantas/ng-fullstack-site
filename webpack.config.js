@@ -17,12 +17,7 @@ module.exports = (env) => {
     resolve: {
       root: resolve(__dirname, '.')
     },
-    plugins: [
-      new webpack.optimize.UglifyJsPlugin({
-        sourceMap: true,
-        mangle: true
-      })
-    ],
+    plugins: [],
     module: {
       loaders: [
         {
