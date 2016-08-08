@@ -141,6 +141,7 @@ export default class Structure {
 
   _createClientTasks() {
     this._structure.clientTask = {
+      entry: 'tasks/index.js',
       build: 'tasks/client/build.js',
       buildCss: 'tasks/client/build_css.js',
       buildHtml: 'tasks/client/build_html.js',
@@ -150,8 +151,7 @@ export default class Structure {
       copy: 'tasks/client/copy.js',
       del: 'tasks/client/del.js',
       test: 'tasks/client/test.js',
-      watch: 'tasks/client/watch.js',
-      entry: 'tasks/index.js',
+      watch: 'tasks/client/watch.js'
     }
   }
 
