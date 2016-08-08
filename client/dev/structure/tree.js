@@ -35,6 +35,9 @@ module.exports = {
   },
   methods: {
       _organize() {
+        let _root = [];
+        let _client = [];
+        let _server = [];
         let _test = [];
         let _task = [];
 
@@ -54,10 +57,14 @@ module.exports = {
           _test.push(this.structure.serverTask[i])
         }
 
+        _root = this.structure.root;
+        _client = this.structure.client;
+        _server = this.structure.server;
+
         return {
-          root: this.structure.root,
-          client: this.structure.client,
-          server: this.structure.server,
+          root: _root,
+          client: _client,
+          server: _server,
           test: _test,
           task: _task
         }
