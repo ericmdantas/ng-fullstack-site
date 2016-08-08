@@ -10,32 +10,49 @@ module.exports = {
     };
   },
   template: `
-    <div class="tree-container">
+    <section class="tree-container">
       <div v-for="c in tree.client">
-        {{c}}
+        <div v-for="cf in c" track-by="$index"
+             :style="stylify(cf, $index)">
+          {{cf}}
+        </div>
       </div>
 
       <div v-for="s in tree.server">
-        {{s}}
+        <div v-for="sf in s" track-by="$index"
+             :style="stylify(sf, $index)">
+          {{sf}}
+        </div>
       </div>
 
       <div v-for="te in tree.test">
-        {{te}}
+        <div v-for="tef in te" track-by="$index"
+             :style="stylify(tef, $index)">
+          {{tef}}
+        </div>
       </div>
 
       <div v-for="ta in tree.task">
-        {{ta}}
+        <div v-for="taf in ta" track-by="$index"
+             :style="stylify(taf, $index)">
+          {{taf}}
+        </div>
       </div>
 
       <div v-for="r in tree.root">
         {{r}}
       </div>
-    </div>
+    </section>
   `,
   ready() {
     this.tree = this._organize();
   },
   methods: {
+      stylify(info, index) {
+        return {
+          'padding-left': index * 20 + 'px'
+        };
+      },
       _organize() {
         return {
           root: this._organizeRoot(),
