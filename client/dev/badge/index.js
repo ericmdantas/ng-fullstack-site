@@ -5,15 +5,15 @@ module.exports = {
     return {
       badges: [
         {
-          src: "https://badge.fury.io/js/generator-ng-fullstack.svg",
+          icon: "https://badge.fury.io/js/generator-ng-fullstack.svg",
           url: "https://github.com/ericmdantas/generator-ng-fullstack/"
         },
         {
-          src: "https://travis-ci.org/ericmdantas/generator-ng-fullstack.svg?branch=master",
+          icon: "https://travis-ci.org/ericmdantas/generator-ng-fullstack.svg?branch=master",
           url: "https://travis-ci.org/ericmdantas/generator-ng-fullstack"
         },
         {
-          src: "https://coveralls.io/repos/github/ericmdantas/generator-ng-fullstack/badge.svg?branch=master",
+          icon: "https://coveralls.io/repos/github/ericmdantas/generator-ng-fullstack/badge.svg?branch=master",
           url: "https://coveralls.io/github/ericmdantas/generator-ng-fullstack?branch=master"
         }
       ]

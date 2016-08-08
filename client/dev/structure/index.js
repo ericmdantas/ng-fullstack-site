@@ -34,7 +34,7 @@ module.exports = {
     }
   },
   components: {
-      'n-tree': require('./tree.js')
+    'n-tree': require('./tree.js')
   },
   template: require('./structure.html')
 }

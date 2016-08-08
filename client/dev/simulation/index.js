@@ -8,7 +8,7 @@ module.exports = {
       events: {
         QUESTION_ANSWERED: 'terminal.question_answered',
         QUESTIONS_FINISHED: 'terminal.questions_finished',
-        QUESTIONS_RESTARTED: 'terminal.questions_restarted'
+        QUESTIONS_RESTARTED: 'terminal.questions_restarted',
       }
     }
   },

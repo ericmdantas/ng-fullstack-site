@@ -4,7 +4,7 @@ import InteractionContainer from './interaction_container.js';
 module.exports = {
   props: {
     bus: null,
-    events: null
+    events: null,
   },
   data() {
     return {
@@ -14,7 +14,7 @@ module.exports = {
       installingDeps: false,
       depsInstalled: false,
       feedbackFinished: false,
-      finished: false
+      finished: false,
     }
   },
   methods: {
