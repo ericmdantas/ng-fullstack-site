@@ -1,3 +1,4 @@
+import './tree.css';
 import _ from 'lodash';
 
 module.exports = {
@@ -9,41 +10,7 @@ module.exports = {
       tree: {}
     };
   },
-  template: `
-    <section class="tree-container">
-      <div v-for="c in tree.client">
-        <div v-for="cf in c" track-by="$index"
-             :style="stylify(cf, $index)">
-          {{cf}}
-        </div>
-      </div>
-
-      <div v-for="s in tree.server">
-        <div v-for="sf in s" track-by="$index"
-             :style="stylify(sf, $index)">
-          {{sf}}
-        </div>
-      </div>
-
-      <div v-for="te in tree.test">
-        <div v-for="tef in te" track-by="$index"
-             :style="stylify(tef, $index)">
-          {{tef}}
-        </div>
-      </div>
-
-      <div v-for="ta in tree.task">
-        <div v-for="taf in ta" track-by="$index"
-             :style="stylify(taf, $index)">
-          {{taf}}
-        </div>
-      </div>
-
-      <div v-for="r in tree.root">
-        {{r}}
-      </div>
-    </section>
-  `,
+  template: require('./tree.html'),
   ready() {
     this.tree = this._organize();
   },
