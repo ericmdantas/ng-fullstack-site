@@ -39,7 +39,7 @@ export default class Structure {
       this._createClientTasks();
     }
 
-    if (this._get("secure").answer === "Yes") {
+    if ((this._get("secure").answer === "Yes") && (this._get("stack").answer !== "Client")) {
       this._createCerts();
     }
   }
@@ -256,6 +256,10 @@ export default class Structure {
 
   get root() {
     return this._splitPath(this._structure.default);
+  }
+
+  get cert() {
+    return this._splitPath(this._structure.certs);
   }
 
   get client() {

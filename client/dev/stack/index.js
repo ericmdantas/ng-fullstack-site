@@ -26,7 +26,8 @@ module.exports = {
             },
             {
               name: 'Typescript',
-              description: 'Something about Babel'
+              description: 'Something about Babel',
+              ready: true,
             },
           ]
         },
@@ -35,19 +36,23 @@ module.exports = {
           items: [
             {
               name: 'Angular 1',
-              description: 'Something about Angular 1'
+              description: 'Something about Angular 1',
+              ready: true,
             },
             {
               name: 'Angular 2',
-              description: 'Something about Angular 2'
+              description: 'Something about Angular 2',
+              ready: true,
             },
             {
               name: 'Aurelia',
-              description: 'Something about Aurelia'
+              description: 'Something about Aurelia',
+              ready: true,
             },
             {
               name: 'Vue',
-              description: 'Something about Vue'
+              description: 'Something about Vue',
+              ready: true,
             },
           ]
         },
@@ -56,15 +61,46 @@ module.exports = {
           items: [
             {
               name: 'HTTP',
-              description: 'Something about HTTP'
+              description: 'Something about HTTP',
+              ready: true,
             },
             {
               name: 'HTTPS',
-              description: 'Something about HTTPS'
+              description: 'Something about HTTPS',
+              ready: true,
             },
             {
               name: 'HTTP/2',
-              description: 'Something about HTTP/2'
+              description: 'Something about HTTP/2',
+              ready: true
+            }
+          ]
+        },
+        {
+          type: 'DBs',
+          items: [
+            {
+              name: 'MongoDB',
+              description: 'Something about MongoDB',
+              ready: true
+            },
+            {
+              name: 'PostgreSQL',
+              description: 'Something about PostgreSQL',
+              ready: false,
+              version: '1.11'
+            },
+            {
+              name: 'RethinkDB',
+              description: 'Something about RethinkDB',
+              ready: false,
+              version: '1.11',
+            },
+            {
+              name: 'Firebase',
+              description: 'Something about Firebase',
+              ready: false,
+              version: '1.11'
             }
           ]
         },
@@ -73,19 +109,23 @@ module.exports = {
           items: [
             {
               name: 'Heroku',
-              description: 'Something about Heroku'
+              description: 'Something about Heroku',
+              ready: true,
             },
             {
               name: 'New Relic',
-              description: 'Something about New Relic'
+              description: 'Something about New Relic',
+              ready: true,
             },
             {
               name: 'MongoHQ',
-              description: 'Something about MongoHQ'
+              description: 'Something about MongoHQ',
+              ready: true,
             },
             {
               name: 'MongoLAB',
-              description: 'Something about MongoLAB'
+              description: 'Something about MongoLAB',
+              ready: true,
             }
           ]
         },
@@ -94,23 +134,29 @@ module.exports = {
           items: [
             {
               name: 'Gulp',
-              description: 'Something about Gulp'
+              description: 'Something about Gulp',
+              ready: true,
             },
             {
               name: 'Webpack',
-              description: 'Something about Webpack'
+              description: 'Something about Webpack',
+              ready: false,
+              version: '1.10'
             },
             {
               name: 'SystemJS',
-              description: 'Something about SystemJS'
+              description: 'Something about SystemJS',
+              ready: true
             },
             {
               name: 'Karma',
-              description: 'Something about Karma'
+              description: 'Something about Karma',
+              ready: true
             },
             {
               name: 'Mocha',
-              description: 'Something about Mocha'
+              description: 'Something about Mocha',
+              ready: true
             }
           ]
         }

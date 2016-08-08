@@ -13,6 +13,10 @@ module.exports = {
         {{c}}
       </div>
 
+      <div v-for="c in tree.cert">
+        {{c}}
+      </div>
+
       <div v-for="s in tree.server">
         {{s}}
       </div>
@@ -35,11 +39,29 @@ module.exports = {
   },
   methods: {
       _organize() {
-        let _root = [];
-        let _client = [];
-        let _server = [];
+        return {
+          root: this._organizeRoot(),
+          cert: this._organizeCert(),
+          client: this._organizeClient(),
+          server: this._organizeServer(),
+          test: this._organizeTest(),
+          task: this._organizeTask()
+        }
+      },
+      _organizeRoot() {
+        return this.structure.root;
+      },
+      _organizeCert() {
+        return this.structure.cert;
+      },
+      _organizeClient() {
+        return this.structure.client;
+      },
+      _organizeServer() {
+        return this.structure.server;
+      },
+      _organizeTest() {
         let _test = [];
-        let _task = [];
 
         for (let i = 0; i < this.structure.clientTest.length; i++) {
           _test.push(this.structure.clientTest[i])
@@ -49,25 +71,20 @@ module.exports = {
           _test.push(this.structure.serverTest[i])
         }
 
+        return _test;
+      },
+      _organizeTask() {
+        let _task = [];
+
         for (let i = 0; i < this.structure.clientTask.length; i++) {
-          _test.push(this.structure.clientTask[i])
+          _task.push(this.structure.clientTask[i])
         }
 
         for (let i = 0; i < this.structure.serverTask.length; i++) {
-          _test.push(this.structure.serverTask[i])
+          _task.push(this.structure.serverTask[i])
         }
 
-        _root = this.structure.root;
-        _client = this.structure.client;
-        _server = this.structure.server;
-
-        return {
-          root: _root,
-          client: _client,
-          server: _server,
-          test: _test,
-          task: _task
-        }
+        return _task;
       }
   }
 }
