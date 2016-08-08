@@ -55,7 +55,6 @@ export default class Structure {
 
   _createNodeServer() {
     this._structure.server = {
-      main: 'server/server.js',
       routes: 'server/routes/index.js',
       constants: 'server/constants/db.json',
       dbConfig: 'server/config/db.conf.js',
@@ -64,7 +63,8 @@ export default class Structure {
       todoRoutes: 'server/api/todo/route/todo-route.js',
       todoModel: 'server/api/todo/model/todo-model.js',
       todoController: 'server/api/todo/controller/todo-controller.js',
-      todoDAO: 'server/api/todo/dao/todo-dao.js'
+      todoDAO: 'server/api/todo/dao/todo-dao.js',      
+      main: 'server/server.js',
     }
 
     if (this._get("transpilerServer").answer === "Typescript") {
@@ -89,59 +89,58 @@ export default class Structure {
 
   _createAngular1Client() {
     this._structure.client = {
-      indexHtml: 'client/dev/index.html',
-      main: 'client/dev/app.js',
-      config: 'client/dev/app.config.js',
-      route: 'client/dev/app.route.js',
       todoController: 'client/dev/controllers/todo-controller.js',
       todoModel: 'client/dev/model/todo-model.js',
       todoResource: 'client/dev/resource/todo-resource.js',
       todoService: 'client/dev/service/todo-dao.js',
       todoStyle: 'client/dev/styles/todo.css',
-      todoTemplates: 'client/dev/templates/todo.html'
+      todoTemplates: 'client/dev/templates/todo.html',
+      indexHtml: 'client/dev/index.html',
+      main: 'client/dev/app.js',
+      config: 'client/dev/app.config.js',
+      route: 'client/dev/app.route.js',
     }
   }
 
   _createAngular2Client() {
     this._structure.client = {
-      indexHtml: 'client/dev/index.html',
-      main: 'client/dev/index.ts',
-      systemConfig: 'client/dev/config.js',
-      route: 'client/dev/app.ts',
       todoComponent: 'client/dev/components/todo-cmp.ts',
       todoRoute: 'client/dev/components/todo-route.ts',
       todoService: 'client/dev/services/todo-service.ts',
       todoStyle: 'client/dev/styles/todo.css',
-      todoTemplate: 'client/dev/templates/todo.html'
+      todoTemplate: 'client/dev/templates/todo.html',
+      indexHtml: 'client/dev/index.html',
+      main: 'client/dev/index.ts',
+      systemConfig: 'client/dev/config.js',
+      route: 'client/dev/app.ts',
     }
   }
 
   _createAureliaClient() {
     this._structure.client = {
-      indexHtml: 'client/dev/index.html',
-      main: 'client/dev/app.js',
-      mainTemplate: 'client/dev/app.html',
       todoComponent: 'client/dev/todo/components/todo.js',
       todoTemplate: 'client/dev/todo/components/todo.html',
       todoModel: 'client/dev/todo/models/todo.js',
       todoService: 'client/dev/todo/services/todo-service.js',
-      todoStyle: 'client/dev/todo/styles/todo.css'
+      todoStyle: 'client/dev/todo/styles/todo.css',
+      indexHtml: 'client/dev/index.html',
+      main: 'client/dev/app.js',
+      mainTemplate: 'client/dev/app.html',
     }
   }
 
   _createVueClient() {
     this._structure.client = {
-      indexHtml: 'client/dev/index.html',
-      main: 'client/dev/index.js',
       todoComponent: 'client/dev/todo/components/todo-cmp.js',
       todoService: 'client/dev/todo/services/todo-service.js',
-      todoStyle: 'client/dev/todo/styles/todo.css'
+      todoStyle: 'client/dev/todo/styles/todo.css',
+      indexHtml: 'client/dev/index.html',
+      main: 'client/dev/index.js',
     }
   }
 
   _createClientTasks() {
     this._structure.clientTask = {
-      entry: 'tasks/index.js',
       build: 'tasks/client/build.js',
       buildCss: 'tasks/client/build_css.js',
       buildHtml: 'tasks/client/build_html.js',
@@ -151,7 +150,8 @@ export default class Structure {
       copy: 'tasks/client/copy.js',
       del: 'tasks/client/del.js',
       test: 'tasks/client/test.js',
-      watch: 'tasks/client/watch.js'
+      watch: 'tasks/client/watch.js',
+      entry: 'tasks/index.js',
     }
   }
 
