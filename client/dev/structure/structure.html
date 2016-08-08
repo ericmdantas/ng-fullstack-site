@@ -10,13 +10,7 @@
     <div class="structure-finished-container"
          v-if="finished">
 
-         <n-tree :root="structure.root"
-                 :client="structure.client"
-                 :client-test="structure.clientTest"
-                 :client-task="structure.clientTask"
-                 :server="structure.server"
-                 :server-test="structure.serverTest"
-                 :server-task="structure.serverTask"></n-tree>
+         <n-tree :structure="structure"></n-tree>
     </div>
 
   </div>

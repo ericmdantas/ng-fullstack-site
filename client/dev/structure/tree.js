@@ -1,12 +1,6 @@
 module.exports = {
   props: {
-    root: null,
-    client: null,
-    clientTest: null,
-    clientTask: null,
-    server: null,
-    serverTest: null,
-    serverTask: null
+    structure: null
   },
   data() {
     return {
@@ -50,13 +44,13 @@ module.exports = {
   methods: {
       _organize() {
         return {
-          root: this.root,
-          client: this.client,
-          clientTest: this.clientTest,
-          clientTask: this.clientTask,
-          server: this.server,
-          serverTest: this.serverTest,
-          serverTask: this.serverTask
+          root: this.structure.root,
+          client: this.structure.client,
+          clientTest: this.structure.clientTest,
+          clientTask: this.structure.clientTask,
+          server: this.structure.server,
+          serverTest: this.structure.serverTest,
+          serverTask: this.structure.serverTask
         }
       }
   }
