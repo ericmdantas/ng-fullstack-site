@@ -7,7 +7,8 @@
 
       <div class="stack-items-container">
         <div class="stack-item" v-for="item in group.items" track-by="$index">
-          <span class="stack-not-ready" v-if="!item.ready">Coming in {{item.version}}</span>
+          <span class="stack-not-ready"
+                v-if="!item.ready">Coming in {{item.version}}</span>
 
           <p class="stack-item-name">{{item.name}}</p>
           <p class="stack-item-description">{{item.description}}</p>
