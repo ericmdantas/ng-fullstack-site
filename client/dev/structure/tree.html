@@ -3,8 +3,9 @@
     <div v-for="cf in c"
          track-by="$index"
          class="tree-item"
+         v-if="cf.visible"
          :style="stylify(cf, $index)">
-      {{cf}}
+      {{cf.value}}
     </div>
   </div>
 
@@ -12,8 +13,9 @@
     <div v-for="sf in s"
          track-by="$index"
          class="tree-item"
+         v-if="sf.visible"
          :style="stylify(sf, $index)">
-      {{sf}}
+      {{sf.value}}
     </div>
   </div>
 
@@ -21,8 +23,9 @@
     <div v-for="tef in te"
          track-by="$index"
          class="tree-item"
+         v-if="tef.visible"
          :style="stylify(tef, $index)">
-      {{tef}}
+      {{tef.value}}
     </div>
   </div>
 
@@ -30,13 +33,19 @@
     <div v-for="taf in ta"
          track-by="$index"
          class="tree-item"
+         v-if="taf.visible"
          :style="stylify(taf, $index)">
-      {{taf}}
+      {{taf.value}}
     </div>
   </div>
 
-  <div v-for="r in tree.root"
-       class="tree-item">
-    {{r}}
+  <div v-for="r in tree.root">
+     <div v-for="rf in r"
+          track-by="$index"
+          class="tree-item"
+          v-if="rf.visible"
+          :style="stylify(rf, $index)">
+      {{rf.value}}
+     </div>
   </div>
 </section>

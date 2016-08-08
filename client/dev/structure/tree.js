@@ -10,7 +10,6 @@ module.exports = {
       tree: {}
     };
   },
-  template: require('./tree.html'),
   ready() {
     this.tree = this._parse();
   },
@@ -21,29 +20,68 @@ module.exports = {
         };
       },
       _parse() {
-        let _treeOrganized = this._organize();
+        let _tree = this._prepare();
+        let _treeNormalized = this._normalize(_tree);
+        let _treeMarked = this._mark(_treeNormalized);
 
-        return _treeOrganized;
+        return _treeMarked;
       },
-      _organize() {
+      _prepare() {
         return {
-          root: this._organizeRoot(),
-          client: this._organizeClient(),
-          server: this._organizeServer(),
-          test: this._organizeTest(),
-          task: this._organizeTask(),
+          root: this._prepareRoot(),
+          client: this._prepareClient(),
+          server: this._prepareServer(),
+          test: this._prepareTest(),
+          task: this._prepareTask(),
         }
       },
-      _organizeRoot() {
+      _normalize(tree) {
+        let _tmpTree = _.clone(tree);
+
+        for (let prop in _tmpTree) {
+          _.forEach(_tmpTree[prop], (paths, indexTreeProp) => {
+            _.forEach(paths, (path, indexItem) => {
+              _tmpTree[prop][indexTreeProp][indexItem] = {
+                value: path,                
+                marked: false,
+                visible: true,
+                isFile: /\.+/.test(path)
+              }
+            })
+          })
+        }
+
+        return _tmpTree;
+      },
+      _mark(tree) {
+        let _tmpTree = _.clone(tree);
+        let _marks = new Set();
+
+        for (let prop in _tmpTree) {
+          _.forEach(_tmpTree[prop], (paths, indexTreeProp) => {
+            _.forEach(paths, (path, indexItem) => {
+              if (!path.isFile && _marks.has(path.fullPath)) {
+                path.marked = true;
+                path.visible = false;
+              } else {
+                _marks.add(path.fullPath);
+              }
+            })
+          })
+        }
+
+        return _tmpTree;
+      },
+      _prepareRoot() {
         return this.structure.root;
       },
-      _organizeClient() {
+      _prepareClient() {
         return this.structure.client;
       },
-      _organizeServer() {
+      _prepareServer() {
         return this.structure.server;
       },
-      _organizeTest() {
+      _prepareTest() {
         let _test = [];
 
         for (let i = 0; i < this.structure.clientTest.length; i++) {
@@ -56,7 +94,7 @@ module.exports = {
 
         return _test;
       },
-      _organizeTask() {
+      _prepareTask() {
         let _task = [];
 
         for (let i = 0; i < this.structure.clientTask.length; i++) {
@@ -69,5 +107,6 @@ module.exports = {
 
         return _task;
       }
-  }
+  },
+  template: require('./tree.html'),
 }
