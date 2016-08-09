@@ -19,7 +19,19 @@ module.exports = {
           'padding-left': index * 20 + 'px'
         };
       },
-      toggleVisibility(tree, index) {
+      toggleVisibilityHandler(tree, obj, index) {
+        if (obj.isFile) return;
+
+        for (let i = 0; i < tree.length; i++) {
+          _.forEach(tree[i], (item, indexTree) => {
+            if (indexTree <= index) return;
+            if (!item.canBeShown) return;
+
+            item.visible = !item.visible;
+          })
+        }
+      },
+      _toggleVisibility(tree, index) {
         for (let i = 0; i < tree.length; i++) {
           _.forEach(tree[i], (item, indexTree) => {
             if (indexTree <= index) return;
@@ -95,7 +107,7 @@ module.exports = {
         let _tmpTree = _.clone(tree);
 
         for (let prop in _tmpTree) {
-          this.toggleVisibility(_tmpTree[prop], 0);
+          this._toggleVisibility(_tmpTree[prop], 0);
         }
 
         return _tmpTree;

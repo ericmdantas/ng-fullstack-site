@@ -4,9 +4,11 @@
          track-by="$index"
          class="tree-item"
          v-if="cf.visible"
-         :style="stylify(cf, $index)"
-         @click="toggleVisibility(tree.client, $index)">
-      {{cf.value}}
+         :class="{'tree-file': cf.isFile, 'tree-folder': !cf.isFile}"
+         :style="stylify(cf, $index)">
+
+      <span @click="toggleVisibilityHandler(tree.client, cf, $index)">{{cf.value}}</span>
+
     </div>
   </div>
 
@@ -15,9 +17,11 @@
          track-by="$index"
          class="tree-item"
          v-if="sf.visible"
-         :style="stylify(sf, $index)"
-         @click="toggleVisibility(tree.server, $index)">
-      {{sf.value}}
+         :class="{'tree-file': sf.isFile, 'tree-folder': !sf.isFile}"
+         :style="stylify(sf, $index)">
+
+      <span @click="toggleVisibilityHandler(tree.server, sf, $index)">{{sf.value}}</span>
+
     </div>
   </div>
 
@@ -26,9 +30,11 @@
          track-by="$index"
          class="tree-item"
          v-if="tef.visible"
-         :style="stylify(tef, $index)"
-         @click="toggleVisibility(tree.test, $index)">
-      {{tef.value}}
+         :class="{'tree-file': tef.isFile, 'tree-folder': !tef.isFile}"
+         :style="stylify(tef, $index)">
+
+      <span @click="toggleVisibilityHandler(tree.test, tef, $index)">{{tef.value}}</span>
+
     </div>
   </div>
 
@@ -37,9 +43,11 @@
          track-by="$index"
          class="tree-item"
          v-if="taf.visible"
-         :style="stylify(taf, $index)"
-         @click="toggleVisibility(tree.task, $index)">
-      {{taf.value}}
+         :class="{'tree-file': taf.isFile, 'tree-folder': !taf.isFile}"
+         :style="stylify(taf, $index)">
+
+      <span @click="toggleVisibilityHandler(tree.task, taf, $index)">{{taf.value}}</span>
+
     </div>
   </div>
 
@@ -48,8 +56,11 @@
           track-by="$index"
           class="tree-item"
           v-if="rf.visible"
+          :class="{'tree-file': rf.isFile, 'tree-folder': !rf.isFile}"
           :style="stylify(rf, $index)">
-      {{rf.value}}
+
+      <span>{{rf.value}}</span>
+
      </div>
   </div>
 </section>

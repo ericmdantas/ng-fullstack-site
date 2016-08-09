@@ -2,6 +2,33 @@
   padding: 7px;
 }
 
-.tree-container .tree-item:hover {
+.tree-container .tree-item span {
+  padding: 5px;
+  border-radius: 4px;
+  transition: background-color .3s, color .1s;
+}
+
+.tree-container .tree-item:hover span {
   cursor: pointer;
+}
+
+.tree-container .tree-item:active span {
+  background-color: #db5627;
+  color: #fff;
+}
+
+.tree-container .tree-item.tree-file {
+
+}
+
+.tree-container .tree-item.tree-folder {
+
+}
+
+.tree-container .tree-item {
+  user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
 }
