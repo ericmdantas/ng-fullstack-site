@@ -4,7 +4,8 @@
          track-by="$index"
          class="tree-item"
          v-if="cf.visible"
-         :style="stylify(cf, $index)">
+         :style="stylify(cf, $index)"
+         @click="toggleVisibility(tree.client, $index)">
       {{cf.value}}
     </div>
   </div>
@@ -14,7 +15,8 @@
          track-by="$index"
          class="tree-item"
          v-if="sf.visible"
-         :style="stylify(sf, $index)">
+         :style="stylify(sf, $index)"
+         @click="toggleVisibility(tree.server, $index)">
       {{sf.value}}
     </div>
   </div>
@@ -24,7 +26,8 @@
          track-by="$index"
          class="tree-item"
          v-if="tef.visible"
-         :style="stylify(tef, $index)">
+         :style="stylify(tef, $index)"
+         @click="toggleVisibility(tree.test, $index)">
       {{tef.value}}
     </div>
   </div>
@@ -34,7 +37,8 @@
          track-by="$index"
          class="tree-item"
          v-if="taf.visible"
-         :style="stylify(taf, $index)">
+         :style="stylify(taf, $index)"
+         @click="toggleVisibility(tree.task, $index)">
       {{taf.value}}
     </div>
   </div>

@@ -19,12 +19,23 @@ module.exports = {
           'padding-left': index * 20 + 'px'
         };
       },
+      toggleVisibility(tree, index) {
+        for (let i = 0; i < tree.length; i++) {
+          _.forEach(tree[i], (item, indexTree) => {
+            if (indexTree <= index) return;
+            if (!item.canBeShown) return;
+
+            item.visible = !item.visible;
+          })
+        }
+      },
       _parse() {
         let _tree = this._prepare();
         let _treeNormalized = this._normalize(_tree);
         let _treeMarked = this._mark(_treeNormalized);
+        let _treeContracted = this._contract(_treeMarked);
 
-        return _treeMarked;
+        return _treeContracted;
       },
       _prepare() {
         return {
@@ -45,6 +56,7 @@ module.exports = {
                 prop: prop,
                 value: path,
                 visible: true,
+                canBeShown: true,
                 nodeIndex: indexItem,
                 isFile: /\.+/.test(path)
               }
@@ -69,11 +81,21 @@ module.exports = {
 
               if (!_isFile && _alreadyMarked && _propAlreadyUsed && _sameNodeLevel) {
                 path.visible = false;
+                path.canBeShown = false;
               } else {
                 _marks.set(path.value, path);
               }
             })
           })
+        }
+
+        return _tmpTree;
+      },
+      _contract(tree) {
+        let _tmpTree = _.clone(tree);
+
+        for (let prop in _tmpTree) {
+          this.toggleVisibility(_tmpTree[prop], 0);
         }
 
         return _tmpTree;

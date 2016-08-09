@@ -1,3 +1,7 @@
 .tree-container .tree-item {
   padding: 7px;
 }
+
+.tree-container .tree-item:hover {
+  cursor: pointer;
+}
