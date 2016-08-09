@@ -42,9 +42,10 @@ module.exports = {
           _.forEach(_tmpTree[prop], (paths, indexTreeProp) => {
             _.forEach(paths, (path, indexItem) => {
               _tmpTree[prop][indexTreeProp][indexItem] = {
-                value: path,                
-                marked: false,
+                prop: prop,
+                value: path,
                 visible: true,
+                nodeIndex: indexItem,
                 isFile: /\.+/.test(path)
               }
             })
@@ -55,16 +56,17 @@ module.exports = {
       },
       _mark(tree) {
         let _tmpTree = _.clone(tree);
-        let _marks = new Set();
+        let _marks = new Map();
 
         for (let prop in _tmpTree) {
           _.forEach(_tmpTree[prop], (paths, indexTreeProp) => {
             _.forEach(paths, (path, indexItem) => {
-              if (!path.isFile && _marks.has(path.fullPath)) {
-                path.marked = true;
+              let _val = _marks.get(path.value);
+
+              if (!path.isFile && _marks.has(path.value) && (_val.prop === path.prop) && (_val.nodeIndex === path.nodeIndex)) {
                 path.visible = false;
               } else {
-                _marks.add(path.fullPath);
+                _marks.set(path.value, path);
               }
             })
           })

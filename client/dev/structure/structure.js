@@ -159,8 +159,7 @@ export default class Structure {
       copy: 'tasks/client/copy.js',
       del: 'tasks/client/del.js',
       test: 'tasks/client/test.js',
-      watch: 'tasks/client/watch.js',
-      entry: 'tasks/index.js',
+      watch: 'tasks/client/watch.js'
     }
   }
 
@@ -186,7 +185,6 @@ export default class Structure {
 
   _createDefaultFiles() {
     this._structure.default = {
-      e2e: 'tests/e2e/todo.e2e_test.js',
       readme: 'README.md',
       protractorConf: 'protractor.conf.js',
       procfile: 'procfile.txt',
@@ -210,14 +208,16 @@ export default class Structure {
     this._structure.clientTest = {
       controllerTest: 'tests/client/todo/controller/todo-controller_test.js',
       modelTest: 'tests/client/todo/model/todo-model_test.js',
-      serviceTest: 'tests/client/todo/service/todo-controller_test.js'
+      serviceTest: 'tests/client/todo/service/todo-controller_test.js',
+      e2e: 'tests/e2e/todo.e2e_test.js',
     }
   }
 
   _createAngular2Test() {
     this._structure.clientTest = {
       componentTest: 'tests/client/todo/components/todo-cmp_test.ts',
-      serviceTest: 'tests/client/todo/services/todo-service_test.ts'
+      serviceTest: 'tests/client/todo/services/todo-service_test.ts',
+      e2e: 'tests/e2e/todo.e2e_test.js',
     }
   }
 
@@ -225,7 +225,8 @@ export default class Structure {
     this._structure.clientTest = {
       componentTest: 'tests/client/todo/components/todo-cmp_test.js',
       modelTest: 'tests/client/todo/services/todo-model_test.js',
-      serviceTest: 'tests/client/todo/services/todo-service_test.js'
+      serviceTest: 'tests/client/todo/services/todo-service_test.js',
+      e2e: 'tests/e2e/todo.e2e_test.js',
     }
   }
 
@@ -233,7 +234,8 @@ export default class Structure {
     this._structure.clientTest = {
       componentTest: 'tests/client/todo/components/todo-cmp_test.js',
       modelTest: 'tests/client/todo/services/todo-model_test.js',
-      serviceTest: 'tests/client/todo/services/todo-service_test.js'
+      serviceTest: 'tests/client/todo/services/todo-service_test.js',
+      e2e: 'tests/e2e/todo.e2e_test.js',
     }
   }
 
@@ -244,7 +246,8 @@ export default class Structure {
       controllerTest: 'tests/server/todo/controller/todo-controller_test.js',
       daoTest: 'tests/server/todo/dao/todo-dao_test.js',
       modelTest: 'tests/server/todo/model/todo-model_test.js',
-      routeTest: 'tests/server/todo/controller/todo-route_test.js'
+      routeTest: 'tests/server/todo/controller/todo-route_test.js',
+      e2e: 'tests/e2e/todo.e2e_test.js',
     }
   }
 
