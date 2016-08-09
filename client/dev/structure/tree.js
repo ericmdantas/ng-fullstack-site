@@ -62,8 +62,12 @@ module.exports = {
           _.forEach(_tmpTree[prop], (paths, indexTreeProp) => {
             _.forEach(paths, (path, indexItem) => {
               let _val = _marks.get(path.value);
+              let _isFile = path.isFile;
+              let _alreadyMarked = _marks.has(path.value);
+              let _propAlreadyUsed = _alreadyMarked && (_val.prop === path.prop);
+              let _sameNodeLevel = _alreadyMarked && (_val.nodeIndex === path.nodeIndex);
 
-              if (!path.isFile && _marks.has(path.value) && (_val.prop === path.prop) && (_val.nodeIndex === path.nodeIndex)) {
+              if (!_isFile && _alreadyMarked && _propAlreadyUsed && _sameNodeLevel) {
                 path.visible = false;
               } else {
                 _marks.set(path.value, path);
@@ -92,6 +96,21 @@ module.exports = {
 
         for (let i = 0; i < this.structure.serverTest.length; i++) {
           _test.push(this.structure.serverTest[i]);
+        }
+
+        let _e2e = 0;
+
+        for (let i = 0; i < _test.length; i++) {
+          for (let j = 0; j < _test[i].length; j++) {
+            if (/\.e2e_test/.test(_test[i][j])) {
+              _e2e += 1;
+
+              if (_e2e > 1) {
+                _test[i].splice(j, 1)
+                i--;
+              }
+            }
+          }
         }
 
         return _test;

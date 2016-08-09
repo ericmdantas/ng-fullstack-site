@@ -78,21 +78,20 @@ export default class Structure {
   _createGolangServer() {
     this._structure.server = {
       routes: 'server/routes/routes.go',
-      dbConfig: 'server/config/dbconfig.go',
-      commonStatic: 'server/common/static/static.go',
-      todoController: 'server/api/todo/controller/todocontroller.go',
-      todoModel: 'server/api/todo/model/todomodel.go',
-      todoDao: 'server/api/todo/dao/tododao.go',
-      todoRoute: 'server/api/todo/route/todoroute.go',
-      main: 'server/main.go',
-
       routesTest: 'server/routes/routes_test.go',
+      dbConfig: 'server/config/dbconfig.go',
       dbConfigTest: 'server/config/dbconfig_test.go',
+      commonStatic: 'server/common/static/static.go',
       commonStaticTest: 'server/common/static/static_test.go',
+      todoController: 'server/api/todo/controller/todocontroller.go',
       todoControllerTest: 'server/api/todo/controller/todocontroller_test.go',
+      todoModel: 'server/api/todo/model/todomodel.go',
       todoModelTest: 'server/api/todo/model/todomodel_test.go',
+      todoDao: 'server/api/todo/dao/tododao.go',
       todoDaoTest: 'server/api/todo/dao/tododao_test.go',
+      todoRoute: 'server/api/todo/route/todoroute.go',
       todoRouteTest: 'server/api/todo/route/todoroute_test.go',
+      main: 'server/main.go',
     }
   }
 
@@ -243,7 +242,7 @@ export default class Structure {
     this._structure.serverTest = {
       helperDbJson: 'tests/server/_helpers/db.json',
       helperDbDao: 'tests/server/_helpers/db.js',
-      controllerTest: 'tests/server/todo/controller/todo-controller_test.js',
+      controllerTest: 'tests/server/todo /controller/todo-controller_test.js',
       daoTest: 'tests/server/todo/dao/todo-dao_test.js',
       modelTest: 'tests/server/todo/model/todo-model_test.js',
       routeTest: 'tests/server/todo/controller/todo-route_test.js',

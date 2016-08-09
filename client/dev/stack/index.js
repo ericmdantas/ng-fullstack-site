@@ -20,6 +20,46 @@ module.exports = {
           ]
         },
         {
+          type: 'Node',
+          items: [
+            {
+              name: 'Express',
+              description: 'Something about Express',
+              ready: true,
+            },
+            {
+              name: 'Koa',
+              description: 'Something about Koa',
+              ready: true,
+            },
+            {
+              name: 'Mongoose',
+              description: 'Something about Mongoose',
+              ready: true,
+            },
+          ]
+        },
+        {
+          type: 'Go',
+          items: [
+            {
+              name: 'Echo',
+              description: 'Something about Echo',
+              ready: true,
+            },
+            {
+              name: 'Gin',
+              description: 'Something about Gin',
+              ready: true,
+            },
+            {
+              name: 'Mgo',
+              description: 'Something about Mgo',
+              ready: true,
+            },
+          ]
+        },
+        {
           type: 'Transpilers',
           items: [
             {
@@ -154,6 +194,11 @@ module.exports = {
             {
               name: 'Karma',
               description: 'Something about Karma',
+              ready: true
+            },
+            {
+              name: 'Jasmine',
+              description: 'Something about Jasmine',
               ready: true
             },
             {
