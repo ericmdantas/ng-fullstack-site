@@ -9,12 +9,12 @@ module.exports = {
           items: [
             {
               name: 'Golang',
-              description: 'Something about Golang',
+              description: `Go is an open source programming language that makes it easy to build simple, reliable, and efficient software.`,
               ready: true,
             },
             {
               name: 'Node',
-              description: 'Something about Node',
+              description: `Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient.`,
               ready: true,
             },
           ]
@@ -24,17 +24,17 @@ module.exports = {
           items: [
             {
               name: 'Express',
-              description: 'Something about Express',
+              description: 'Fast, unopinionated, minimalist web framework for Node.js',
               ready: true,
             },
             {
               name: 'Koa',
-              description: 'Something about Koa',
+              description: 'Next generation web framework for Node.js',
               ready: true,
             },
             {
               name: 'Mongoose',
-              description: 'Something about Mongoose',
+              description: 'Elegant MongoDB object modeling for Node.js',
               ready: true,
             },
           ]
@@ -44,17 +44,17 @@ module.exports = {
           items: [
             {
               name: 'Echo',
-              description: 'Something about Echo',
+              description: 'Fast and unfancy HTTP server framework for Go',
               ready: true,
             },
             {
               name: 'Gin',
-              description: 'Something about Gin',
+              description: 'Gin is a web framework written in Go. It features a martini-like API with much better performance',
               ready: true,
             },
             {
               name: 'Mgo',
-              description: 'Something about Mgo',
+              description: 'mgo (pronounced as mango) is a MongoDB driver for the Go language that implements a rich and well tested selection of features under a very simple API following standard Go idioms',
               ready: true,
             },
           ]
@@ -64,12 +64,12 @@ module.exports = {
           items: [
             {
               name: 'Babel',
-              description: 'Something about Babel',
+              description: 'Use next generation JavaScript, today',
               ready: true,
             },
             {
               name: 'Typescript',
-              description: 'Something about Babel',
+              description: 'TypeScript is a superset of JavaScript that compiles to clean JavaScript output',
               ready: true,
             },
           ]
@@ -79,22 +79,22 @@ module.exports = {
           items: [
             {
               name: 'Angular 1',
-              description: 'Something about Angular 1',
+              description: 'HTML enhanced for web apps',
               ready: true,
             },
             {
               name: 'Angular 2',
-              description: 'Something about Angular 2',
+              description: 'One framework. Mobile and desktop',
               ready: true,
             },
             {
               name: 'Aurelia',
-              description: 'Something about Aurelia',
+              description: 'Aurelia is a JavaScript client framework for mobile, desktop and web leveraging simple conventions and empowering creativity',
               ready: true,
             },
             {
               name: 'Vue',
-              description: 'Something about Vue',
+              description: 'Reactive Components for Modern Web Interfaces',
               ready: true,
             },
           ]
@@ -104,17 +104,17 @@ module.exports = {
           items: [
             {
               name: 'HTTP',
-              description: 'Something about HTTP',
+              description: '',
               ready: true,
             },
             {
               name: 'HTTPS',
-              description: 'Something about HTTPS',
+              description: '',
               ready: true,
             },
             {
               name: 'HTTP/2',
-              description: 'Something about HTTP/2',
+              description: '',
               ready: true
             }
           ]
@@ -124,24 +124,24 @@ module.exports = {
           items: [
             {
               name: 'MongoDB',
-              description: 'Something about MongoDB',
+              description: 'MongoDB Server is an open-source, document database designed for ease of development and scaling',
               ready: true
             },
             {
               name: 'PostgreSQL',
-              description: 'Something about PostgreSQL',
+              description: 'PostgreSQL is a powerful, open source object-relational database system. It has more than 15 years of active development and a proven architecture that has earned it a strong reputation for reliability, data integrity, and correctness',
               ready: false,
               version: '1.11'
             },
             {
               name: 'RethinkDB',
-              description: 'Something about RethinkDB',
+              description: 'The open-source database for the realtime web',
               ready: false,
               version: '1.11',
             },
             {
               name: 'Firebase',
-              description: 'Something about Firebase',
+              description: 'Firebase is a mobile platform that helps you quickly develop high-quality apps, grow your user base, and earn more money',
               ready: false,
               version: '1.11'
             }
@@ -152,22 +152,22 @@ module.exports = {
           items: [
             {
               name: 'Heroku',
-              description: 'Something about Heroku',
+              description: `Heroku is a cloud platform that lets companies build, deliver, monitor and scale apps — we're the fastest way to go from idea to URL, bypassing all those infrastructure headaches.`,
               ready: true,
             },
             {
               name: 'New Relic',
-              description: 'Something about New Relic',
+              description: 'Application performance monitoring for better business',
               ready: true,
             },
             {
               name: 'MongoHQ',
-              description: 'Something about MongoHQ',
+              description: 'Production Ready, Cloud Hosted',
               ready: true,
             },
             {
               name: 'MongoLAB',
-              description: 'Something about MongoLAB',
+              description: 'Database-as-a-Service for MongoDB. Proudly powering over 300,000 MongoDB deployments on AWS, Azure, and Google',
               ready: true,
             }
           ]
@@ -177,33 +177,33 @@ module.exports = {
           items: [
             {
               name: 'Gulp',
-              description: 'Something about Gulp',
+              description: 'Automate and enhance your workflow',
               ready: true,
             },
             {
               name: 'Webpack',
-              description: 'Something about Webpack',
+              description: 'Module bundler',
               ready: false,
               version: '1.10'
             },
             {
               name: 'SystemJS',
-              description: 'Something about SystemJS',
+              description: 'Universal dynamic module loader',
               ready: true
             },
             {
               name: 'Karma',
-              description: 'Something about Karma',
+              description: 'Spectacular Test Runner for JavaScript',
               ready: true
             },
             {
               name: 'Jasmine',
-              description: 'Something about Jasmine',
+              description: 'DOM-less simple JavaScript testing framework',
               ready: true
             },
             {
               name: 'Mocha',
-              description: 'Something about Mocha',
+              description: 'Mocha is a feature-rich JavaScript test framework running on Node.js and in the browser, making asynchronous testing simple and fun',
               ready: true
             }
           ]
