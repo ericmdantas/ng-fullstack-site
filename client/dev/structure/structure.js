@@ -56,15 +56,15 @@ export default class Structure {
 
   _createNodeServer() {
     this._structure.server = {
+      todoRoutes: 'server/api/todo/route/todo-route.js',
+      todoModel: 'server/api/todo/model/todo-model.js',
+      todoController: 'server/api/todo/controller/todo-controller.js',
+      todoDAO: 'server/api/todo/dao/todo-dao.js',
       routes: 'server/routes/index.js',
       constants: 'server/constants/db.json',
       dbConfig: 'server/config/db.conf.js',
       routeConfig: 'server/config/routes.conf.js',
       commons: 'server/commons/static/index.js',
-      todoRoutes: 'server/api/todo/route/todo-route.js',
-      todoModel: 'server/api/todo/model/todo-model.js',
-      todoController: 'server/api/todo/controller/todo-controller.js',
-      todoDAO: 'server/api/todo/dao/todo-dao.js',
       main: 'server/server.js',
     }
 
@@ -77,12 +77,6 @@ export default class Structure {
 
   _createGolangServer() {
     this._structure.server = {
-      routes: 'server/routes/routes.go',
-      routesTest: 'server/routes/routes_test.go',
-      dbConfig: 'server/config/dbconfig.go',
-      dbConfigTest: 'server/config/dbconfig_test.go',
-      commonStatic: 'server/common/static/static.go',
-      commonStaticTest: 'server/common/static/static_test.go',
       todoController: 'server/api/todo/controller/todocontroller.go',
       todoControllerTest: 'server/api/todo/controller/todocontroller_test.go',
       todoModel: 'server/api/todo/model/todomodel.go',
@@ -91,18 +85,24 @@ export default class Structure {
       todoDaoTest: 'server/api/todo/dao/tododao_test.go',
       todoRoute: 'server/api/todo/route/todoroute.go',
       todoRouteTest: 'server/api/todo/route/todoroute_test.go',
+      routes: 'server/routes/routes.go',
+      routesTest: 'server/routes/routes_test.go',
+      dbConfig: 'server/config/dbconfig.go',
+      dbConfigTest: 'server/config/dbconfig_test.go',
+      commonStatic: 'server/common/static/static.go',
+      commonStaticTest: 'server/common/static/static_test.go',
       main: 'server/main.go',
     }
   }
 
   _createAngular1Client() {
     this._structure.client = {
-      todoController: 'client/dev/controllers/todo-controller.js',
-      todoModel: 'client/dev/model/todo-model.js',
-      todoResource: 'client/dev/resource/todo-resource.js',
-      todoService: 'client/dev/service/todo-dao.js',
-      todoStyle: 'client/dev/styles/todo.css',
-      todoTemplates: 'client/dev/templates/todo.html',
+      todoController: 'client/dev/todo/controllers/todo-controller.js',
+      todoModel: 'client/dev/todo/model/todo-model.js',
+      todoResource: 'client/dev/todo/resource/todo-resource.js',
+      todoService: 'client/dev/todo/service/todo-dao.js',
+      todoStyle: 'client/dev/todo/styles/todo.css',
+      todoTemplates: 'client/dev/todo/templates/todo.html',
       indexHtml: 'client/dev/index.html',
       main: 'client/dev/app.js',
       config: 'client/dev/app.config.js',
@@ -112,11 +112,11 @@ export default class Structure {
 
   _createAngular2Client() {
     this._structure.client = {
-      todoComponent: 'client/dev/components/todo-cmp.ts',
-      todoRoute: 'client/dev/components/todo-route.ts',
-      todoService: 'client/dev/services/todo-service.ts',
-      todoStyle: 'client/dev/styles/todo.css',
-      todoTemplate: 'client/dev/templates/todo.html',
+      todoComponent: 'client/dev/todo/components/todo-cmp.ts',
+      todoRoute: 'client/dev/todo/components/todo-route.ts',
+      todoService: 'client/dev/todo/services/todo-service.ts',
+      todoStyle: 'client/dev/todo/styles/todo.css',
+      todoTemplate: 'client/dev/todo/templates/todo.html',
       indexHtml: 'client/dev/index.html',
       main: 'client/dev/index.ts',
       systemConfig: 'client/dev/config.js',
