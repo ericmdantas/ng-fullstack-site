@@ -1,0 +1,27 @@
+.install-calling {
+  font-size: 40px;
+  color: #db5627;
+}
+
+.install-container {
+  padding-top: 50px;
+}
+
+.install-card {
+  position: relative;
+  padding: 15px;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 -1px 0 #e5e5e5,
+              0 0 2px rgba(0,0,0,.12),
+              0 2px 4px rgba(0,0,0,.24);
+}
+
+@media(min-width: 1000px) {
+  .install-calling {
+    font-size: 70px;
+    margin-left: -35px;
+  }
+}

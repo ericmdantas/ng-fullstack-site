@@ -33,7 +33,7 @@ header .header-container {
 @media(min-width: 600px) {
   header .project-options-container {
     text-transform: uppercase;
-    width: 250px;
+    width: 350px;
     display: flex;
     justify-content: space-between;
   }
