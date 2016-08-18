@@ -1,10 +1,10 @@
 import './simulation.css';
-import {bus} from '../utils/index.js';
+import {Bus} from '../utils/index.js';
 
 module.exports = {
   data() {
     return {
-      bus: bus,
+      bus: new Bus(),
       events: {
         QUESTION_ANSWERED: 'terminal.question_answered',
         QUESTIONS_FINISHED: 'terminal.questions_finished',

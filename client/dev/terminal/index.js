@@ -23,7 +23,7 @@ module.exports = {
       info.answer = answer;
       this.terminal.showNext();
 
-      this.bus.pub(this.events.QUESTION_ANSWERED, info);
+      this.bus.emit(this.events.QUESTION_ANSWERED, info);
 
       if (info.lastOne) {
         this.finish()
@@ -38,7 +38,7 @@ module.exports = {
       this.feedbackFinished = false;
 
       this.terminal = new InteractionContainer();
-      this.bus.pub(this.events.QUESTIONS_RESTARTED);
+      this.bus.emit(this.events.QUESTIONS_RESTARTED);
     },
     finish() {
       this.finished = true;
@@ -57,7 +57,7 @@ module.exports = {
           return this._feedbackFinished();
         })
         .then(() => {
-          this.bus.pub(this.events.QUESTIONS_FINISHED);
+          this.bus.emit(this.events.QUESTIONS_FINISHED);
         });
     },
     _creatingStructure() {

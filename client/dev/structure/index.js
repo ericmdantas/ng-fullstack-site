@@ -14,16 +14,16 @@ module.exports = {
     }
   },
   ready() {
-    this.bus.sub(this.events.QUESTION_ANSWERED, (info) => {
+    this.bus.on(this.events.QUESTION_ANSWERED, (info) => {
       this.answers.set(info.key, info);
     });
 
-    this.bus.sub(this.events.QUESTIONS_FINISHED, () => {
+    this.bus.on(this.events.QUESTIONS_FINISHED, () => {
       this.finished = true;
       this.create();
     });
 
-    this.bus.sub(this.events.QUESTIONS_RESTARTED, () => {
+    this.bus.on(this.events.QUESTIONS_RESTARTED, () => {
       this.finished = false;
       this.answers.clear();
     });
