@@ -28,7 +28,7 @@ module.exports = {
               ready: true,
             },
             {
-              name: 'Koa',
+              name: 'Koa 2',
               description: 'Next generation web framework for Node.js',
               ready: true,
             },
@@ -68,7 +68,7 @@ module.exports = {
               ready: true,
             },
             {
-              name: 'Typescript',
+              name: 'Typescript 2',
               description: 'TypeScript is a superset of JavaScript that compiles to clean JavaScript output',
               ready: true,
             },
