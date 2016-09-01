@@ -265,7 +265,17 @@ export default class Structure {
   }
 
   get client() {
-    return this._splitPath(this._structure.client);
+    let _client = this._structure.client;    
+
+    if (this._get("stylePreprocessor").answer === "Less") {
+      _client.todoStyle = _client.todoStyle.replace('.css', '.less');
+    }
+
+    if (this._get("stylePreprocessor").answer === "Sass") {
+      _client.todoStyle = _client.todoStyle.replace('.css', '.sass');      
+    } 
+
+    return this._splitPath(_client);
   }
 
   get server() {

@@ -72,6 +72,15 @@ module.exports = class InteractionContainer {
         multiple: true,
         visible: false
       },
+      'stylePreprocessor': {
+        question: 'Which CSS pre-processor do you want to use?',
+        answer: '',
+        answers: ['None', 'Less', 'Sass'],
+        answered: false,
+        key: 'stylePreprocessor',
+        multiple: true,
+        visible: false
+      },
       'secure': {
         question: 'Is it going to be a secure app (HTTPS || HTTP/2)?',
         answer: '',
@@ -155,7 +164,11 @@ module.exports = class InteractionContainer {
               if (this.interactions["serverLanguage"].answer === "Golang") {
                 this.interactions["goFramework"].visible = true;
               } else {
-                this.interactions["secure"].visible = true;
+                if (this.interactions["stack"] !== "Server") {
+                  this.interactions["stylePreprocessor"].visible = true;
+                } else {
+                  this.interactions["secure"].visible = true;
+                }
               }
             }
           }
@@ -175,7 +188,11 @@ module.exports = class InteractionContainer {
           if (_currentInt.answered && !_currentInt.alreadyAnswered && this.interactions["stack"] !== "Client") {
             _currentInt.alreadyAnswered = true;
 
-            this.interactions["secure"].visible = true;
+            if (this.interactions["stack"] !== "Server") {
+              this.interactions["stylePreprocessor"].visible = true;
+            } else {
+              this.interactions["secure"].visible = true;
+            }
           }
 
           break;
@@ -184,10 +201,21 @@ module.exports = class InteractionContainer {
           if (_currentInt.answered && !_currentInt.alreadyAnswered) {
             _currentInt.alreadyAnswered = true;
 
-            this.interactions["secure"].visible = true;
+            if (this.interactions["stack"] !== "Server") {
+              this.interactions["stylePreprocessor"].visible = true;
+            } else {
+              this.interactions["secure"].visible = true;
+            }
           }
 
           break;
+
+        case "stylePreprocessor":
+          if (_currentInt.answered && !_currentInt.alreadyAnswered) {
+            _currentInt.alreadyAnswered = true;
+
+            this.interactions["secure"].visible = true;
+          }          
 
         case "secure":
           if (_currentInt.answered && !_currentInt.alreadyAnswered) {
