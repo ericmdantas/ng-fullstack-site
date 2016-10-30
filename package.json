@@ -19,12 +19,7 @@
   "homepage": "https://github.com/ericmdantas/ng-fullstack-site#readme",
   "babel": {
     "presets": [
-      [
-        "es2015",
-        {
-          "modules": false
-        }
-      ],
+      "es2015",
       "es2016",
       "stage-0"
     ]
@@ -33,9 +28,10 @@
     "font-awesome": "^4.6.3",
     "lodash": "^4.14.1",
     "ubus": "0.0.5",
-    "vue": "^1.0.26"
+    "vue": "^2.0.3"
   },
   "devDependencies": {
+    "babel-core": "^6.18.0",
     "babel-loader": "^6.2.4",
     "babel-preset-es2015": "^6.13.2",
     "babel-preset-es2016": "^6.11.3",
@@ -44,7 +40,7 @@
     "html-loader": "^0.4.3",
     "image-webpack-loader": "^2.0.0",
     "style-loader": "^0.13.1",
-    "webpack": "^2.1.0-beta.20",
+    "webpack": "^1.13.3",
     "webpack-dev-server": "^1.14.1"
   }
 }
