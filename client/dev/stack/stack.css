@@ -53,6 +53,7 @@
 
 .stack-item-description {
   color: #888;
+  font-size: 14px;
 }
 
 @media(min-width: 1000px) {
