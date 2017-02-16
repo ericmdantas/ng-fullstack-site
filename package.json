@@ -27,8 +27,8 @@
   "dependencies": {
     "font-awesome": "^4.6.3",
     "lodash": "^4.14.1",
-    "ubus": "0.0.5",
-    "vue": "^2.0.3"
+    "ubus": "^1.0.4",
+    "vue": "^2.1.10"
   },
   "devDependencies": {
     "babel-core": "^6.18.0",
